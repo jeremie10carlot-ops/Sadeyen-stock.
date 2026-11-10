@@ -1,0 +1,2779 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173a35"><meta name="description" content="Gestion du matériel, des événements et du nettoyage du Domaine Sadeyen.">
+
+<title>Sadeyen Stock — Domaine Sadeyen</title><style>
+:root{--ink:#213a35;--ink2:#4e635c;--muted:#778881;--deep:#153832;--green:#296b55;--gold:#cb9e60;--amber:#e3a853;--danger:#b65349;--blue:#587fa8;--paper:#f6f7f4;--white:#fff;--line:#e3e8e4;--soft:#eff3ef;--shadow:0 8px 28px #12372e0a;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper)}*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.46;cursor:not-allowed}.hidden{display:none!important}.shell{display:flex;min-height:100vh}.sidebar{width:248px;min-width:248px;background:var(--deep);color:white;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;padding:27px 17px 19px}.brand{display:flex;align-items:center;gap:11px;padding:0 11px 35px}.brand-mark{width:39px;height:39px;background:#e5dfd0;border-radius:11px;color:var(--deep);display:grid;place-items:center;font-family:Georgia,serif;font-size:28px;font-weight:bold;letter-spacing:-3px}.brand-mark span,.auth-wordmark span{color:#ba9865}.brand strong{display:block;font-weight:800;letter-spacing:.19em;font-size:15px}.brand small{display:block;font-size:8px;color:#a7c1b5;letter-spacing:.19em;margin-top:4px}.workspace-title{font-size:10px;letter-spacing:.17em;color:#8db0a3;margin:5px 14px 15px;font-weight:700}.side-nav{display:flex;flex-direction:column;gap:3px}.side-link{background:none;border:0;color:#b8cec3;text-align:left;display:flex;align-items:center;gap:12px;padding:13px 13px;border-radius:10px;font-weight:600;font-size:13px;transition:.15s}.side-link:hover{background:#234f45;color:white}.side-link.active{background:#315b4f;color:#fff}.glyph{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px;font-weight:600}.sidebar-bottom{margin-top:auto;border-top:1px solid #416058;padding-top:20px}.sidebar-user{display:flex;gap:10px;align-items:center;margin:0 3px 11px}.sidebar-user .avatar{background:#456d5e}.sidebar-user strong{display:block;font-size:13px}.sidebar-user small{display:block;color:#b0c9be;font-size:11px;margin-top:3px}.avatar,.user-avatar{width:35px;height:35px;display:flex;align-items:center;justify-content:center;border-radius:11px;background:#dbe7de;color:#225448;font-weight:800}.main-shell{flex:1;min-width:0}.topbar{height:74px;display:flex;justify-content:space-between;align-items:center;padding:0 38px;background:white;border-bottom:1px solid var(--line)}.breadcrumbs{font-size:10px;letter-spacing:.13em;color:#8b9c94;font-weight:750}.breadcrumbs span{margin:0 11px;color:#b3bdb7}.breadcrumbs strong{color:var(--ink);font-size:11px}.top-actions{display:flex;align-items:center;gap:18px}.online{font-size:11px;color:#5b7968;display:flex;align-items:center;gap:7px}.online i{width:7px;height:7px;background:#55ae75;border-radius:50%}#content{max-width:1430px;margin:auto;padding:35px 38px 90px}.page-intro{display:flex;justify-content:space-between;gap:22px;align-items:end;margin-bottom:26px}.eyebrow{font-weight:800;letter-spacing:.16em;color:#ad8956;font-size:10px;display:inline-block}.page-intro h1{font-size:30px;line-height:1.2;letter-spacing:-.045em;margin:9px 0 7px;font-weight:760}.page-intro p{color:var(--muted);margin:0;line-height:1.5}.btn{border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:11px 15px;border-radius:10px;font-weight:700;font-size:12px;min-height:39px;white-space:nowrap}.btn.primary{background:var(--deep);color:white}.btn.primary:hover{background:#28594c}.btn.outline{background:white;color:var(--ink);border-color:#d3ddd6}.btn.outline:hover{background:#f4f7f5}.btn.quiet{background:#285448;color:#dce7df;justify-content:space-between}.btn.soft{background:#e8efe9;color:#37604e}.btn.danger{background:#fff0ee;color:#a7433b}.btn.small{min-height:32px;padding:7px 10px;font-size:11px}.btn.full{width:100%}.icon-btn{border:0;background:#f0f4f0;border-radius:9px;width:34px;height:34px;font-size:20px;color:var(--ink)}.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:19px}.kpi{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px 19px;box-shadow:var(--shadow);min-height:142px}.kpi-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.kpi-label{color:#798a81;font-size:12px;font-weight:650}.kpi-icon{font-size:17px;background:#f1f5f1;width:34px;height:34px;display:grid;place-items:center;border-radius:10px}.kpi-number{font-size:30px;letter-spacing:-.04em;font-weight:790;margin-top:12px;line-height:1}.kpi-foot{font-size:11px;color:#829087;margin-top:10px}.kpi-number.amber{color:#af7840}.kpi-number.red{color:#aa5146}.columns{display:grid;grid-template-columns:1.45fr 1fr;gap:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:18px}.panel.pad{padding:20px}.panel-header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:20px 20px 15px}.panel h2{font-size:15px;letter-spacing:-.02em;margin:0}.panel .subtitle{font-size:12px;color:#839088;margin:7px 0 0}.panel-content{padding:0 20px 20px}.row-list{display:flex;flex-direction:column}.list-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid #eef1ee}.list-row:last-child{border-bottom:0}.list-row strong{font-size:13px;display:block}.list-row small{display:block;font-size:11px;color:#849189;margin-top:5px}.list-row .actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.event-date{background:#f5f5ee;min-width:51px;width:51px;text-align:center;border-radius:9px;padding:9px 5px;color:#5b6b4c}.event-date strong{font-size:16px}.event-date span{font-size:9px;text-transform:uppercase;font-weight:800;letter-spacing:.06em}.event-row-info{flex:1;min-width:0}.event-row-info strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.event-line{display:flex;align-items:center;gap:12px}.tag{padding:5px 8px;display:inline-flex;align-items:center;gap:4px;border-radius:7px;font-size:10px;font-weight:730;background:#eff3ef;color:#586c60;white-space:nowrap}.tag.green{background:#e7f3e9;color:#307045}.tag.amber{background:#fff3df;color:#946523}.tag.red{background:#fcedea;color:#a34f43}.tag.blue{background:#eaf1f9;color:#4c7397}.tag.gray{background:#f0f2f0;color:#768278}.alert-line{display:flex;gap:12px;align-items:start;padding:14px 0;border-bottom:1px solid #eff0ed}.alert-line:last-child{border-bottom:0}.alert-dot{width:9px;height:9px;border-radius:50%;background:#e4a35d;flex-shrink:0;margin-top:4px}.alert-line strong{display:block;font-size:12px}.alert-line p{margin:4px 0 0;font-size:11px;color:#85918b}.empty{text-align:center;padding:37px 15px;color:#87928b}.empty b{display:block;color:#63756a;margin-bottom:8px}.empty .illustration{font-size:31px;margin-bottom:9px}.filters{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:0 20px 17px}.search{flex:1;min-width:190px}input,select,textarea{width:100%;border:1px solid #dce4de;border-radius:9px;background:white;color:var(--ink);outline:none;padding:11px 12px;min-height:41px;font-size:12px}input:focus,select:focus,textarea:focus{border-color:#77a58c;box-shadow:0 0 0 3px #6eaa8d22}textarea{min-height:81px;resize:vertical}label{display:block;font-weight:710;font-size:11px;margin-bottom:7px;color:#56665f}label input,label select,label textarea{display:block;margin-top:7px}label.check{display:flex;align-items:center;gap:8px;font-size:12px}label.check input{width:17px;min-height:17px}.filter-sel{width:185px}.chip-tabs{display:flex;gap:6px;overflow:auto;padding:0 20px 17px}.chip{border:1px solid #e1e7e2;background:#fff;padding:8px 12px;border-radius:25px;font-size:11px;font-weight:690;white-space:nowrap;color:#62736a}.chip.active{background:#dce9df;border-color:#b4d0be;color:#275441}.table-scroll{overflow-x:auto;max-width:100%}.data-table{border-collapse:collapse;width:100%;font-size:12px;min-width:720px}.data-table thead{background:#f7f9f6}.data-table th{color:#89978d;font-size:10px;font-weight:800;text-align:left;padding:13px 14px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}.data-table td{border-top:1px solid #ecf0ec;padding:13px 14px;vertical-align:middle}.data-table tr:hover td{background:#fcfdfa}.data-table td b{font-weight:740}.data-table td small{display:block;color:#859188;margin-top:4px}.number{font-variant-numeric:tabular-nums;font-weight:730;font-size:13px}.unknown{color:#9a8d7b;font-style:italic;font-weight:500}.bar-track{height:5px;width:90px;background:#edf0ec;border-radius:5px;overflow:hidden;margin-top:7px;display:flex}.bar-segment{height:100%}.muted{color:var(--muted)!important}.smalltext{font-size:11px}.link-btn{border:0;background:none;padding:5px;color:var(--green);font-size:11px;font-weight:750}.event-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:14px}.event-card{background:white;border:1px solid var(--line);border-radius:15px;padding:19px;box-shadow:var(--shadow);cursor:pointer;transition:.15s}.event-card:hover{transform:translateY(-2px);border-color:#a6bcb0}.event-card .card-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.event-card h3{font-size:17px;margin:20px 0 6px;letter-spacing:-.03em}.event-card p{font-size:12px;color:#839189;margin:0 0 15px}.event-card footer{border-top:1px solid #eff2ef;padding-top:13px;display:flex;justify-content:space-between;font-size:11px;color:#66786e}.event-card .date-box{background:#f4f6ef;border-radius:8px;padding:9px 11px;font-weight:700;font-size:11px}.back-link{border:0;background:none;color:#6c7f70;font-weight:700;padding:0;margin-bottom:20px}.detail-header{background:#20493e;border-radius:18px;padding:24px;color:#f5f8f4;display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:16px}.detail-header h2{font-size:25px;margin:8px 0 10px}.detail-header p{font-size:12px;color:#d5e6d9;margin:0}.detail-header .tag{background:#42675a;color:#e5f0e9}.detail-buttons{display:flex;gap:8px;flex-wrap:wrap}.detail-buttons .btn{background:#f6f7ee;color:#244c3e}.detail-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.detail-metric{background:#f6f8f5;border:1px solid #ebefeb;border-radius:11px;padding:14px}.detail-metric strong{font-size:21px;display:block}.detail-metric small{font-size:11px;color:#849188}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.form-grid>.wide{grid-column:1/-1}.modal-backdrop{position:fixed;inset:0;background:#122e2985;z-index:200;display:flex;align-items:center;justify-content:center;padding:15px;backdrop-filter:blur(3px)}.modal{width:min(590px,100%);max-height:90vh;overflow:auto;background:white;border-radius:17px;box-shadow:0 30px 95px #0f2b2855}.modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}.modal-head h2{margin:0;font-size:18px}.modal #modal-body{padding:21px 22px}.modal-footer{border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:8px;padding:16px 22px}.form-help{font-size:11px;color:#86948a;line-height:1.5;margin-top:5px}.notice{background:#fff8ea;border:1px solid #f4e6c7;border-radius:10px;padding:12px 14px;color:#856b3b;font-size:12px;margin:10px 0}.notice.info{background:#eef5f0;color:#466853;border-color:#dce9dd}.notice.error{background:#fff0ef;color:#963f3b;border-color:#f3d7d3}.action-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.action-option{background:#fff;border:1px solid #dce5de;border-radius:11px;padding:13px;text-align:left;font-size:12px;font-weight:760;color:var(--ink)}.action-option.selected{background:#eaf4eb;border-color:#8cad97}.action-option small{display:block;font-size:10px;color:#849589;margin-top:4px;font-weight:500}.cleaning-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.clean-card{border:1px solid var(--line);border-radius:12px;padding:15px;margin-bottom:9px;display:flex;justify-content:space-between;align-items:center;gap:10px}.clean-card strong{display:block;font-size:12px}.clean-card small{display:block;font-size:11px;color:#88958a;margin-top:5px}.clean-number{font-size:20px;color:#aa7a42;font-weight:800}.clean-card .btn{margin-top:7px}.setting-block{background:white;border:1px solid var(--line);padding:22px;border-radius:16px;margin-bottom:16px}.setting-block h2{font-size:15px;margin:0 0 8px}.setting-block p{font-size:12px;color:#7f8b82;line-height:1.65}.setting-row{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:18px 0}.setting-row strong{font-size:12px}.toast{position:fixed;bottom:25px;right:25px;background:#173c32;color:#fff;border-radius:11px;padding:15px 19px;box-shadow:0 11px 40px #123a3040;font-size:12px;max-width:400px;z-index:500}.toast.bad{background:#a24741}.auth-screen{position:fixed;inset:0;display:grid;grid-template-columns:1fr 1fr;background:#f9faf6;z-index:600}.auth-decoration{background:#193e35;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:13%;position:relative;overflow:hidden}.decoration-circle{width:470px;height:470px;border:1px solid #64867a;opacity:.3;border-radius:50%;position:absolute;right:-160px;top:-150px;box-shadow:0 0 0 70px #274e4510,0 0 0 140px #274e4510}.auth-wordmark{font-family:Georgia,serif;font-size:91px;letter-spacing:-16px;color:#e9e6d8;line-height:1}.auth-decoration p{letter-spacing:.25em;font-size:12px;margin-top:23px;color:#b0d0bd;font-weight:700}.auth-decoration h1{font-size:39px;letter-spacing:-.04em;line-height:1.17;margin:33px 0 17px;max-width:400px}.auth-decoration>span{color:#bbd3c4;font-size:13px}.auth-form-wrap{display:grid;place-items:center;padding:35px}.auth-form{width:min(360px,100%)}.auth-form h2{font-size:28px;letter-spacing:-.045em;line-height:1.2;margin:12px 0}.auth-form p{color:#788c7e;line-height:1.6;margin-bottom:27px;font-size:13px}.auth-form label{margin:18px 0}.auth-form .btn{margin-top:20px;font-size:13px;min-height:47px;justify-content:space-between}.auth-form small{color:#98a79c;font-size:11px;display:block;text-align:center;margin-top:23px}.form-error{color:#ac4942;font-size:12px;min-height:15px;margin-top:10px}.mobile-nav{display:none}.print-sheet{display:none}.inline-qty{color:#34604f;font-size:11px;font-weight:750}.role-marker{color:#a8c8b5;font-size:10px;letter-spacing:.13em}.help-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.step{padding:17px;border-radius:12px;background:#f3f6f2;border:1px solid #e3ebe4}.step b{font-size:20px;display:block;color:#356c57;margin-bottom:10px}.step strong{display:block;font-size:12px}.step p{font-size:11px;color:#7a8e81;line-height:1.5}.clickable{cursor:pointer}.clickable:hover{background:#f9faf8}.lineactions{display:flex;gap:7px;align-items:center}.spacer{flex:1}.nowrap{white-space:nowrap}.divider{border-top:1px solid var(--line);margin:17px 0}.sheet-footer{font-size:10px;color:#86948b;margin:20px 0}.flag{font-size:11px;background:#e5f4e5;color:#2a7144;padding:4px 8px;border-radius:5px}.notification-count{border-radius:99px;background:#c88c5f;color:#fff;font-size:10px;padding:2px 6px;margin-left:auto}
+@media(max-width:1170px){.kpi-grid{grid-template-columns:repeat(2,1fr)}.columns{grid-template-columns:1fr}.sidebar{width:217px;min-width:217px}.topbar{padding:0 24px}#content{padding:30px 24px 100px}}@media(max-width:760px){.sidebar{display:none}.topbar{height:62px;padding:0 19px}.breadcrumbs{font-size:9px}.breadcrumbs strong{font-size:10px}.top-actions{gap:10px}.online{font-size:0}.online i{width:8px;height:8px}#content{padding:25px 14px 115px}.page-intro{align-items:start;margin-bottom:21px}.page-intro h1{font-size:26px}.page-intro p{font-size:12px}.page-intro>.btn{padding:10px;font-size:11px}.kpi-grid{gap:9px}.kpi{padding:14px 13px;min-height:113px}.kpi-number{font-size:25px}.kpi-foot{font-size:10px}.kpi-label{font-size:11px}.kpi-icon{width:26px;height:26px;font-size:13px}.panel-header{padding:17px 14px 12px}.panel-content{padding:0 14px 15px}.filters{padding:0 14px 14px}.chip-tabs{padding:0 14px 14px}.filter-sel{width:140px}.mobile-nav{height:73px;padding:6px 5px calc(7px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e3e9e3;z-index:90;box-shadow:0 -6px 28px #183c280c}.mobile-link{border:0;background:none;color:#8d9e93;display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;font-size:9px;font-weight:700;padding:5px 0}.mobile-link.active{color:#29674f}.mobile-link .glyph{font-size:21px;width:24px;height:25px}.columns{gap:5px}.cleaning-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr;gap:9px}.form-grid>.wide{grid-column:auto}.detail-header{padding:21px;display:block}.detail-buttons{margin-top:15px}.detail-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.detail-metric{padding:10px}.detail-metric strong{font-size:18px}.auth-screen{grid-template-columns:1fr}.auth-decoration{display:none}.auth-form-wrap{min-height:100vh;padding:32px}.help-steps{grid-template-columns:1fr}.modal{max-height:91vh}.toast{bottom:83px;left:14px;right:14px;max-width:none}.event-cards{grid-template-columns:1fr}.action-grid{grid-template-columns:1fr 1fr}}@media print{.sidebar,.topbar,.mobile-nav,.btn,.back-link,.panel:not(.print-allowed),.page-intro{display:none!important}#content{padding:0!important;max-width:none}.print-sheet{display:block!important;color:black!important}.print-sheet table{width:100%;border-collapse:collapse}.print-sheet th,.print-sheet td{border:1px solid #bbb;padding:9px;text-align:left}.detail-header{background:white;color:black;border:1px solid #ddd}.detail-header p{color:#555}}
+
+</style>
+</head>
+<body>
+<div id="login" class="auth-screen hidden">
+  <div class="auth-decoration"><div class="decoration-circle"></div><div class="auth-wordmark">S<span>·</span></div><p>DOMAINE SADEYEN</p><h1>Le matériel, au bon endroit.<br>Au bon moment.</h1><span>Inventaire · Événements · Nettoyage</span></div>
+  <div class="auth-form-wrap"><form id="login-form" class="auth-form"><span class="eyebrow">ESPACE ÉQUIPE</span><h2>Bienvenue sur Sadeyen Stock.</h2><p>Connectez-vous pour suivre le matériel du domaine en temps réel.</p><label>Identifiant<input name="username" type="text" autocomplete="username" required placeholder="Votre identifiant"></label><label>Mot de passe<input name="password" type="password" autocomplete="current-password" required placeholder="Votre mot de passe"></label><button class="btn primary full" type="submit">Se connecter <span>→</span></button><div id="login-error" class="form-error"></div><small>Connexion réservée aux personnes autorisées.</small></form></div>
+</div>
+<div id="shell" class="shell hidden">
+ <aside class="sidebar">
+  <div class="brand"><div class="brand-mark">S<span>·</span></div><div><strong>SADEYEN</strong><small>STOCK MANAGEMENT</small></div></div>
+  <div class="workspace-title">ESPACE DE TRAVAIL</div>
+  <nav class="side-nav" id="side-nav"></nav>
+  <div class="sidebar-bottom"><div class="sidebar-user" id="sidebar-user"></div><button id="logout" class="btn quiet full">Se déconnecter <span>↗</span></button></div>
+ </aside>
+ <div class="main-shell"><header class="topbar"><div class="breadcrumbs">DOMAINE SADEYEN <span>/</span> <strong id="breadcrumb">Vue d'ensemble</strong></div><div class="top-actions"><span class="online"><i></i> Local sur cet iPhone</span><div class="user-avatar" id="avatar">S</div></div></header><main id="content" tabindex="-1"></main></div>
+ <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation principale"></nav>
+</div>
+<div id="modal-backdrop" class="modal-backdrop hidden" role="presentation"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading"><div class="modal-head"><h2 id="modal-heading">Modifier</h2><button class="icon-btn" id="modal-close" aria-label="Fermer">×</button></div><form id="modal-form"><div id="modal-body"></div><div class="modal-footer"><button type="button" class="btn outline" id="modal-cancel">Annuler</button><button type="submit" class="btn primary" id="modal-submit">Enregistrer</button></div></form></section></div>
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+<script type="application/json" id="seed-json">[
+  {
+    "category": "Mobilier & salle",
+    "name": "Table ronde",
+    "total": 20,
+    "unit": "pièce",
+    "verified": true,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Table carrée",
+    "total": 18,
+    "unit": "pièce",
+    "verified": true,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Table rectangulaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Table mange-debout",
+    "total": 13,
+    "unit": "pièce",
+    "verified": true,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Chaise Chiavari",
+    "total": 154,
+    "unit": "pièce",
+    "verified": true,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Chaise de jardin",
+    "total": 107,
+    "unit": "pièce",
+    "verified": true,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Chaise enfant",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Table enfant",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Table d’honneur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Table buffet",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Table desserte",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Console accueil",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Comptoir bar",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Mobilier lounge",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Banquette",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Coussin assise",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Parasol",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Porte-manteaux",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Pupitre",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Panneau signalétique",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Poubelle de salle",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Poubelle tri",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Chariot de transport",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Diable",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Chariot pliant",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Cale de table",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Mobilier & salle",
+    "name": "Patins de chaise",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Nappe ronde",
+    "total": 11,
+    "unit": "pièce",
+    "verified": true,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Nappe rectangulaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Nappe carrée",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Housse de chaise",
+    "total": 128,
+    "unit": "pièce",
+    "verified": true,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Housse de mange-debout",
+    "total": 4,
+    "unit": "pièce",
+    "verified": true,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Housse de table rectangulaire",
+    "total": 5,
+    "unit": "pièce",
+    "verified": true,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Chemin de table",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Serviette tissu",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Serviette papier",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Jupe de buffet",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Housse de protection mobilier",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Torchon cuisine",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Essuie-main",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Tablier service",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Tablier cuisine",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Gant de service",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Linge & habillage",
+    "name": "Sac linge sale",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Verre à eau",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Verre à vin",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Flûte à champagne",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Verre à bière",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Verre à cocktail",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Verre à shot",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Gobelet réutilisable",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Carafe",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Pichet",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Distributeur de boissons",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Fontaine à eau",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Bonbonne eau",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Seau à glace",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Bac à glaçons",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Machine à glaçons",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Glacière",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Réfrigérateur bar",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Congélateur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Tireuse à bière",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Décapsuleur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Tire-bouchon",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Shaker",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Doseur jigger",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Cuillère à mélange",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Passoire cocktail",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Pilon",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Pince à glaçons",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Pelle à glaçons",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Planche à découper bar",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Couteau bar",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Presse-agrumes",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Mixeur blender",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Bac à garnitures",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Tapis de bar",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Plateau antidérapant",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Sous-verre",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Serviette cocktail",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Paille",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Agitateur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Bouchon verseur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Bac égouttoir",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Égouttoir verres",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Lave-verres",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Éponge dédiée bar",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Bac déchets bar",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Caisse ou terminal paiement",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Bar & boissons",
+    "name": "Étiquette allergènes boissons",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Four professionnel",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Plaque cuisson",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Réchaud",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Brûleur gaz",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Bouteille gaz",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Détendeur gaz",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Brasero",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Grille brasero",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Plancha",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Barbecue",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Hotte ou extraction",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Réfrigérateur cuisine",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Congélateur cuisine",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Armoire froide",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Thermomètre sonde",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Thermomètre réfrigérateur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Bac gastronorme GN",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Couvercle GN",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Chariot GN",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Étuve maintien chaud",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Bain-marie",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Chafing dish",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Combustible chafing dish",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Bac froid",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Glacière alimentaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Table inox préparation",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Planche HACCP",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Couteau chef",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Couteau office",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Couteau pain",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Fusil affûtage",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Économe",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Mandoline",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Ciseaux cuisine",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Spatule",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Louche",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Écumoire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Fouet",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Pince cuisine",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Cuillère service",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Saladier",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Bac mélange",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Passoire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Tamis",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Casserole",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Marmite",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Poêle",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Plaque four",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Balance cuisine",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Doseur gradué",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Film alimentaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Papier cuisson",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Papier aluminium",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Boîte alimentaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Étiquette date DLC",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Gant anti-chaleur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Gant jetable alimentaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Charlotte",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Tablier cuisine",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Savon mains",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Distributeur savon",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Essuie-mains à usage unique",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Poubelle pédale",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Sac poubelle alimentaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Produit désinfectant contact alimentaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Kit nettoyage cuisine",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Traiteur & cuisine",
+    "name": "Extincteur adapté cuisine",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Assiette plate",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Assiette dessert",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Assiette creuse",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Bol",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Tasse café",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Sous-tasse",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Cuillère café",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Fourchette table",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Couteau table",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Cuillère soupe",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Fourchette dessert",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Cuillère dessert",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Couteau dessert",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Plateau de service",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Plateau buffet",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Présentoir buffet",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Réhausse buffet",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Corbeille à pain",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Pince buffet",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Cuillère buffet",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Louche buffet",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Étiquette plat",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Support étiquette",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Fiche allergènes",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Cloche alimentaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Couvercle protection",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Distributeur serviettes",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Distributeur couverts",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Bac débarrassage",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Chariot débarrassage",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Seau champagne",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Corbeille déchets table",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Machine café",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Bouilloire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Thermos café",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Thermos eau chaude",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Sucrier",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Pot à lait",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Dessertière",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Fontaine chocolat",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Machine barbe à papa",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Buffet & service",
+    "name": "Gaufrier",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Enceinte",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Caisson basse",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Pied enceinte",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Console mixage",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Micro filaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Micro sans fil",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Pied micro",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "DJ controller",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Table DJ",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Ordinateur DJ",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Écran projection",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Vidéoprojecteur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Écran TV",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Câble HDMI",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Câble XLR",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Câble audio",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Multiprise",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Rallonge électrique",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Enrouleur électrique",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Passe-câble",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Boîtier électrique protégé",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Projecteur LED",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Guirlande lumineuse",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Éclairage piste de danse",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Lyre lumière",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Machine à fumée",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Ventilateur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Brumisateur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Talkie-walkie",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Batterie de secours",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Chargeur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Télécommande",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Chronomètre animation",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Matériel mini-jeux",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Photobooth",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Trépied",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Technique & animation",
+    "name": "Fond photo",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Chapiteau",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Voile nomade",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Lestage homologué",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Sangle arrimage",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Piquet fixation",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Barrière délimitation",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Rubalise",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Tapis antidérapant",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Éclairage secours",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Extincteur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Défibrillateur DAE",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Trousse premiers secours",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Signalétique sortie secours",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Plan évacuation",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Registre sécurité",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Registre accessibilité",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Affiche interdiction fumer",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Affiche vidéoprotection",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Signalétique sanitaires",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Distributeur gel hydroalcoolique",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Gants ménage",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Balai",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Pelle",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Serpillière",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Seau ménage",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Raclette",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Aspirateur",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Nettoyeur haute pression",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Produit sols",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Désinfectant surfaces",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Papier toilette",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Distributeur papier toilette",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Savon sanitaires",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Essuie-mains sanitaires",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Sacs poubelle",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Bac de tri",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Conteneur déchets",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Lampe torche",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Escabeau",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Boîte à outils",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Ruban adhésif",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Serre-câble",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Installation & sécurité",
+    "name": "Chariot rangement",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Arche décorative",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Support fond photo",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Vase",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Centre de table",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Bougeoir LED",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Numéro de table",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Chevalet accueil",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Panneau bienvenue",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Guirlande déco",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Nappe thème enfant",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Décoration anniversaire",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Ballon décoratif",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Gonfleur ballon",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Château gonflable",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Soufflerie gonflable",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Tapis de protection",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Rallonge soufflerie",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Kit réparation gonflable",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Barrière sécurité enfants",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Jeux de plein air",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Table cadeau",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Urne",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  },
+  {
+    "category": "Décoration & enfants",
+    "name": "Livre d’or",
+    "total": null,
+    "unit": "pièce",
+    "verified": false,
+    "notes": ""
+  }
+]</script><script>
+/* Self-contained demo: NOT a server, not a security boundary, no cross-device sync. */
+(() => {
+  if(location.protocol !== 'file:' && !window.SADEYEN_DEMO)return;
+  const seed=JSON.parse(document.getElementById('seed-json').textContent);
+  const key='sadeyen-final-demo-v1';
+  const initial=()=>({
+    meId:1,
+    users:[{id:1,username:'admin',name:'Responsable Sadeyen',role:'admin',active:1},{id:2,username:'equipe',name:'Équipe Sadeyen',role:'team',active:1},{id:3,username:'traiteur',name:'Traiteur partenaire',role:'provider',active:1},{id:4,username:'nettoyage',name:'Responsable nettoyage',role:'cleaner',active:1}],
+    items:seed.map((x,i)=>({...x,id:i+1,total:x.total||0,verified:x.verified?1:0,minimum:0,active:1,out:0,dirty:0,cleaning:0,damaged:0,missing:0,available:x.total||0})),
+    events:[],reservations:[],bins:[],requests:[],history:[],inventory_audit:[],counter:1000
+  });
+  let db;
+  try{db=JSON.parse(localStorage.getItem(key))}catch{}
+  if(!db||!Array.isArray(db.items))db=initial();
+  const persist=()=>{try{localStorage.setItem(key,JSON.stringify(db))}catch{}};
+  const me=()=>db.users.find(u=>u.id===db.meId);
+  const isManager=()=>['admin','team'].includes(me().role);
+  const count=(itemId,bucket,eventId=null)=>db.bins.filter(x=>x.item_id===itemId&&x.bucket===bucket&&(eventId===null||x.event_id===eventId)).reduce((n,x)=>n+x.qty,0);
+  const unavailable=(id)=>['out','dirty','cleaning','damaged','missing'].reduce((n,k)=>n+count(id,k),0);
+  const avail=id=>db.items.find(i=>i.id===id).total-unavailable(id);
+  const changeBin=(eid,iid,bucket,delta)=>{let b=db.bins.find(x=>x.event_id===eid&&x.item_id===iid&&x.bucket===bucket);if(!b){b={event_id:eid,item_id:iid,bucket,qty:0};db.bins.push(b)}if(b.qty+delta<0)throw Error('Quantité insuffisante dans ce statut');b.qty+=delta};
+  const error=(msg,status=400)=>{let e=Error(msg);e.status=status;throw e};
+  const integer=v=>{const n=Number(v);if(!Number.isInteger(n)||n<0)error('Quantité entière positive attendue');return n};
+  const validEvent=e=>{if(!e.title||!e.starts_at||!e.ends_at||e.ends_at<=e.starts_at)error('Nom et dates de début/fin valides requis')};
+  const events=()=>db.events.filter(e=>isManager()||e.assigned_ids.includes(me().id)).map(e=>({...e,
+    reservations:db.reservations.filter(r=>r.event_id===e.id).map(r=>({...r,...(({name,category,unit})=>({name,category,unit}))(db.items.find(i=>i.id===r.item_id))})),
+    positions:db.bins.filter(b=>b.event_id===e.id&&b.qty>0).map(b=>({...b,...(({name,category,unit})=>({name,category,unit}))(db.items.find(i=>i.id===b.item_id))}))
+  }));
+  const items=()=>db.items.filter(i=>isManager()||db.reservations.some(r=>r.item_id===i.id&&events().some(e=>e.id===r.event_id))||db.bins.some(b=>b.item_id===i.id&&events().some(e=>e.id===b.event_id))).map(i=>{
+    const n={...i};for(const b of ['out','dirty','cleaning','damaged','missing'])n[b]=count(i.id,b);
+    n.available=avail(i.id);if(!isManager()){n.total=null;n.available=null;n.minimum=null;n.notes=null}return n;
+  });
+  const requestLines=()=>db.requests.filter(r=>isManager()||r.user_id===me().id).slice().reverse().map(r=>({...r,item_name:db.items.find(i=>i.id===r.item_id)?.name,event_title:db.events.find(e=>e.id===r.event_id)?.title,requester_name:db.users.find(u=>u.id===r.user_id)?.name}));
+  const historyLines=()=>db.history.filter(h=>isManager()||events().some(e=>e.id===h.event_id)).slice().reverse().map(h=>({...h,item_name:db.items.find(i=>i.id===h.item_id)?.name,category:db.items.find(i=>i.id===h.item_id)?.category,event_title:db.events.find(e=>e.id===h.event_id)?.title,actor_name:db.users.find(u=>u.id===h.user_id)?.name}));
+  const assertManager=()=>{if(!isManager())error('Accès réservé à l’équipe',403)};
+  function move(p,userId){const i=db.items.find(i=>i.id===Number(p.item_id)),e=db.events.find(e=>e.id===Number(p.event_id)),n=integer(p.qty);if(!i||!e||n<1)error('Mouvement invalide');if(!i.verified)error('Matériel non compté');const transitions={checkout:[null,'out'],return_clean:['out',null],return_dirty:['out','dirty'],send_cleaning:['dirty','cleaning'],receive_clean:['cleaning',null],clean_onsite:['dirty',null],damage:['out','damaged'],missing:['out','missing'],repair:['damaged',null],found:['missing',null]};const pair=transitions[p.action];if(!pair)error('Opération inconnue');if(pair[0]){if(count(i.id,pair[0],e.id)<n)error('Stock insuffisant pour cette opération');changeBin(e.id,i.id,pair[0],-n)}else if(avail(i.id)<n)error('Stock disponible insuffisant');if(pair[1])changeBin(e.id,i.id,pair[1],n);
+   db.history.push({id:++db.counter,event_id:e.id,item_id:i.id,action:p.action,qty:n,user_id:userId,note:p.note||'',created_at:new Date().toISOString()});return {message:'Mouvement enregistré'};
+  }
+  function handle(path,method,p){
+    const self=me();const parts=path.split('/').filter(Boolean);
+    if(path==='/api/me')return self;
+    if(path==='/api/login')return self;
+    if(path==='/api/logout')return {message:'Déconnecté'};
+    if(path==='/api/account/password')return {message:'Mot de passe fictif — non modifié dans la démonstration'};
+    if(path==='/api/state')return {me:self,items:items(),events:events(),requests:requestLines(),history:historyLines(),users:isManager()?db.users:[],inventory_audit:isManager()?db.inventory_audit.slice().reverse():[],actions:{}};
+    if(path==='/api/export'){assertManager();return {schema:'sadeyen-demo-1',...db}}
+    if(path==='/api/items'&&method==='POST'){
+      assertManager();if(!p.category?.trim()||!p.name?.trim())error('Désignation et matériel requis');if(db.items.some(i=>i.category.toLowerCase()===p.category.toLowerCase()&&i.name.toLowerCase()===p.name.toLowerCase()))error('Cet équipement existe déjà');const total=p.verified?integer(p.total):0;db.items.push({id:++db.counter,category:p.category,name:p.name,unit:p.unit||'pièce',verified:p.verified?1:0,total,minimum:integer(p.minimum||0),notes:p.notes||'',active:1});persist();return {message:'Équipement ajouté'}
+    }
+    if(parts[1]==='items'&&parts.length===3&&method==='PATCH'){
+      assertManager();const i=db.items.find(x=>x.id===Number(parts[2]));if(!i)error('Matériel introuvable');const qty=p.verified?integer(p.total):i.total;if(qty<unavailable(i.id))error('Total inférieur aux unités déjà sorties');Object.assign(i,{category:p.category,name:p.name,unit:p.unit,total:qty,verified:p.verified?1:0,minimum:integer(p.minimum),notes:p.notes||''});db.inventory_audit.push({id:++db.counter,item_id:i.id,item_name:i.name,category:i.category,previous_total:null,new_total:qty,previous_verified:0,new_verified:i.verified,reason:'Correction',actor_name:me().name,created_at:new Date().toISOString()});persist();return {message:'Équipement mis à jour'}
+    }
+    if(path==='/api/items/import'){
+      assertManager();let created=0,updated=0;for(const x of p.items){if(!x.category||!x.name)continue;let i=db.items.find(y=>y.category.toLowerCase()===x.category.trim().toLowerCase()&&y.name.toLowerCase()===x.name.trim().toLowerCase());if(i){if(x.total!==null){const n=integer(x.total);if(n<unavailable(i.id))error('Quantité trop basse pour '+i.name);i.total=n;i.verified=1}updated++}else{db.items.push({id:++db.counter,category:x.category,name:x.name,unit:x.unit||'pièce',total:x.total===null?0:integer(x.total),verified:x.total===null?0:1,minimum:0,notes:x.notes||'',active:1});created++}}persist();return {message:`${created} références ajoutées, ${updated} mises à jour`}
+    }
+    if(path==='/api/events'&&method==='POST'){
+      assertManager();validEvent(p);const e={...p,id:++db.counter,assigned_ids:[],status:p.status||'planned'};db.events.push(e);persist();return {id:e.id,message:'Événement créé'}
+    }
+    if(parts[1]==='events'&&parts.length===3&&method==='PATCH'){
+      assertManager();validEvent(p);const e=db.events.find(x=>x.id===Number(parts[2]));if(!e)error('Événement introuvable');Object.assign(e,p);persist();return {message:'Événement modifié'}
+    }
+    if(parts[1]==='events'&&parts.length===4&&parts[3]==='assign'&&method==='POST'){
+      assertManager();const e=db.events.find(x=>x.id===Number(parts[2]));if(!e)error('Événement introuvable');const uid=Number(p.user_id);if(!e.assigned_ids.includes(uid))e.assigned_ids.push(uid);persist();return {message:'Accès ajouté'}
+    }
+    if(parts[1]==='events'&&parts.length===5&&parts[3]==='assign'&&method==='DELETE'){
+      assertManager();const e=db.events.find(x=>x.id===Number(parts[2]));e.assigned_ids=e.assigned_ids.filter(x=>x!==Number(parts[4]));persist();return {message:'Accès retiré'}
+    }
+    if(path==='/api/reservations'&&method==='POST'){
+      assertManager();const e=db.events.find(e=>e.id===Number(p.event_id)),i=db.items.find(i=>i.id===Number(p.item_id)),n=integer(p.qty);if(!e||!i||(!i.verified&&n>0))error('Événement ou matériel non vérifié');const other=db.reservations.filter(r=>r.item_id===i.id&&r.event_id!==e.id).reduce((sum,r)=>{const ev=db.events.find(x=>x.id===r.event_id);return sum+(ev.status!=='cancelled'&&ev.status!=='completed'&&ev.starts_at<e.ends_at&&ev.ends_at>e.starts_at?r.qty:0)},0);const unready=count(i.id,'dirty')+count(i.id,'cleaning')+count(i.id,'damaged')+count(i.id,'missing');if(n+other>i.total-unready)error('Réservation impossible : stock déjà affecté sur la même période');db.reservations=db.reservations.filter(r=>r.event_id!==e.id||r.item_id!==i.id);if(n)db.reservations.push({event_id:e.id,item_id:i.id,qty:n});persist();return {message:'Réservation enregistrée'}
+    }
+    if(path==='/api/movements'&&method==='POST'){
+      if(isManager()){const r=move(p,self.id);persist();return r}
+      const e=db.events.find(x=>x.id===Number(p.event_id));if(!e?.assigned_ids.includes(self.id))error('Accès refusé à cet événement',403);
+      const permitted=self.role==='provider'?['return_clean','return_dirty','damage','missing']:['send_cleaning','receive_clean','clean_onsite'];if(!permitted.includes(p.action))error('Opération non autorisée');
+      const r={...p,id:++db.counter,qty:integer(p.qty),item_id:Number(p.item_id),event_id:Number(p.event_id),user_id:self.id,state:'pending',created_at:new Date().toISOString()};db.requests.push(r);persist();return {id:r.id,pending:true,message:'Déclaration transmise pour validation'};
+    }
+    if(parts[1]==='requests'&&parts.length===4&&method==='POST'){
+      assertManager();const r=db.requests.find(x=>x.id===Number(parts[2]));if(!r||r.state!=='pending')error('Déclaration déjà traitée');if(parts[3]==='approve')move(r,self.id);r.state=parts[3]==='approve'?'approved':'rejected';r.reviewed_by=self.id;r.reviewed_at=new Date().toISOString();persist();return {message:'Demande traitée'}
+    }
+    if(path==='/api/users'&&method==='POST'){
+      assertManager();if(db.users.some(u=>u.username===p.username))error('Identifiant déjà utilisé');db.users.push({...p,id:++db.counter,active:1});persist();return {message:'Utilisateur créé'}
+    }
+    if(parts[1]==='users'&&parts.length===3&&method==='PATCH'){
+      assertManager();const u=db.users.find(u=>u.id===Number(parts[2]));Object.assign(u,p);persist();return {message:'Utilisateur mis à jour'}
+    }
+    if(parts[1]==='users'&&parts[3]==='password')return {message:'Mot de passe fictif mis à jour'};
+    error('Fonction non disponible dans cette démonstration',404);
+  }
+  window.fetch=async(input,init={})=>{
+    const path=String(input).split('?')[0],method=(init.method||'GET').toUpperCase();if(!path.startsWith('/api/'))throw Error('Accès réseau désactivé en mode démonstration');
+    try{const value=handle(path,method,init.body?JSON.parse(init.body):{});return new Response(JSON.stringify(value),{status:200,headers:{'Content-Type':'application/json'}})}
+    catch(e){return new Response(JSON.stringify({error:e.message}),{status:e.status||400,headers:{'Content-Type':'application/json'}})}
+  };
+  document.addEventListener('DOMContentLoaded',()=>{
+    const bar=document.querySelector('.topbar');const notice=document.createElement('div');notice.className='notice info';notice.style.cssText='margin:0 20px;padding:8px 12px;font-size:11px';notice.innerHTML='<strong>VERSION DÉMONSTRATION</strong> — données enregistrées uniquement dans ce navigateur, non partagées entre appareils.';
+    bar.after(notice);
+    const wrap=document.createElement('div');wrap.style.cssText='font-size:11px;margin-right:13px';wrap.innerHTML='<select id="demo-role" aria-label="Tester un rôle"><option value="1">Admin</option><option value="2">Équipe</option><option value="3">Prestataire</option><option value="4">Nettoyage</option></select>';
+    document.querySelector('.top-actions').prepend(wrap);
+    wrap.querySelector('select').value=String(db.meId);
+    wrap.querySelector('select').addEventListener('change',e=>{db.meId=Number(e.target.value);persist();location.reload()});
+    const help=document.createElement('button');help.className='btn outline small';help.style.cssText='margin-left:10px;float:right;font-size:10px;min-height:25px;padding:3px 8px';help.textContent='Réinitialiser';help.onclick=()=>{if(confirm('Réinitialiser les données fictives de la démonstration ?')){try{localStorage.removeItem(key)}catch{}location.reload()}};notice.append(help);
+  });
+})();
+
+</script><script>
+'use strict';
+/* Sadeyen Stock — shared browser client. All inventory mutations go through the server. */
+const $=id=>document.getElementById(id);
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num=x=>new Intl.NumberFormat('fr-FR').format(x||0);
+const datestr=x=>x?new Date(x).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}):'—';
+const dateTime=x=>x?new Date(x).toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'—';
+const ROLE={admin:'Administrateur',team:'Équipe du domaine',provider:'Prestataire',cleaner:'Nettoyage'};
+const EVENT_STATUS={planned:['En préparation','amber'],confirmed:['Confirmé','green'],completed:['Terminé','gray'],cancelled:['Annulé','red']};
+const OPERATIONS={checkout:['Sortie événement','Matériel prêt à sortir → utilisé'],return_clean:['Retour propre','Utilisé → disponible'],return_dirty:['Retour sale','Utilisé → à laver'],send_cleaning:['Départ nettoyage','À laver → chez le nettoyeur'],receive_clean:['Retour nettoyage','Chez le nettoyeur → disponible'],clean_onsite:['Nettoyé sur place','À laver → disponible'],damage:['Matériel cassé','Utilisé → abîmé'],missing:['Matériel perdu','Utilisé → manquant'],repair:['Matériel réparé','Abîmé → disponible'],found:['Matériel retrouvé','Manquant → disponible']};
+const icons={dashboard:'◫',inventory:'▤',events:'▣',moves:'⇄',cleaning:'◈',requests:'◎',history:'◷',users:'♙',settings:'⚙',plus:'+',arrow:'→'};
+const navBase=[['dashboard',"Vue d'ensemble"],['inventory','Inventaire'],['events','Événements'],['moves','Mouvements'],['cleaning','Nettoyage'],['requests','Validations'],['history','Historique'],['users','Utilisateurs'],['settings','Paramètres']];
+let S={me:null,items:[],events:[],history:[],inventory_audit:[],requests:[],users:[],screen:'dashboard',eventId:null,filters:{search:'',category:'',stock:'all',historySearch:'',historyType:'movements'},lastSync:0};
+let modalHandler=null;let toastTimer=null;let currentlyWorking=false;
+const role=()=>S.me?.role||'provider';const manager=()=>['admin','team'].includes(role());const admin=()=>role()==='admin';
+const itemById=id=>S.items.find(x=>x.id===Number(id));const eventById=id=>S.events.find(x=>x.id===Number(id));
+const tag=(txt,color='gray')=>`<span class="tag ${color}">${esc(txt)}</span>`;
+const empty=(title,detail='')=>`<div class="empty"><div class="illustration">◇</div><b>${esc(title)}</b><span>${esc(detail)}</span></div>`;
+const pIntro=(label,title,desc,button='')=>`<div class="page-intro"><div><div class="eyebrow">${esc(label)}</div><h1>${esc(title)}</h1><p>${esc(desc)}</p></div>${button}</div>`;
+const btn=(label,act,extra='',cls='primary')=>`<button class="btn ${cls}" data-act="${esc(act)}" ${extra}>${label}</button>`;
+const namedOption=(value,label,selected=false)=>`<option value="${esc(value)}" ${selected?'selected':''}>${esc(label)}</option>`;
+function formFld(label,name,value='',type='text',extra=''){return `<label>${esc(label)}<input type="${type}" name="${esc(name)}" value="${esc(value)}" ${extra}></label>`}
+function selectFld(label,name,options,value=''){return `<label>${esc(label)}<select name="${esc(name)}">${options.map(([v,l])=>namedOption(v,l,String(v)===String(value))).join('')}</select></label>`}
+function textFld(label,name,value=''){return `<label>${esc(label)}<textarea name="${esc(name)}">${esc(value)}</textarea></label>`}
+async function api(path, method='GET', payload){
+  const res=await fetch(path,{method,credentials:'same-origin',headers:payload?{'Content-Type':'application/json'}:{},body:payload?JSON.stringify(payload):undefined});
+  let json;try{json=await res.json()}catch{throw new Error('Réponse du serveur indisponible')}
+  if(!res.ok)throw new Error(json.error||'Erreur de connexion');return json;
+}
+function notify(message,bad=false){const t=$('toast');t.textContent=message;t.className='toast'+(bad?' bad':'');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.add('hidden'),4500)}
+function showLogin(){S.me=null;$('login').classList.remove('hidden');$('shell').classList.add('hidden')}
+function showApp(){$('login').classList.add('hidden');$('shell').classList.remove('hidden');renderNav();render()}
+async function refresh(renderNow=true){const data=await api('/api/state');Object.assign(S,data);S.lastSync=Date.now();if(renderNow){renderNav();render()}return data}
+async function update(path,method,payload,message){
+  if(currentlyWorking)return;currentlyWorking=true;
+  try{const result=await api(path,method,payload);if(message!==false)notify(result.message||message||'Enregistré');await refresh();closeModal();return result}
+  catch(e){notify(e.message,true);throw e}finally{currentlyWorking=false}
+}
+function openModal(title,body,callback,submit='Enregistrer'){
+  $('modal-heading').textContent=title;$('modal-body').innerHTML=body;$('modal-submit').textContent=submit;
+  $('modal-backdrop').classList.remove('hidden');modalHandler=callback;
+  const field=$('modal-form').querySelector('input:not([type=hidden]),select');if(field)setTimeout(()=>field.focus(),60);
+}
+function closeModal(){$('modal-backdrop').classList.add('hidden');modalHandler=null;$('modal-form').reset()}
+function renderNav(){
+  const links=navBase.filter(([key])=>(key!=='users'||admin())&&(key!=='history'||manager())&&(key!=='requests'||true));
+  $('side-nav').innerHTML=links.map(([key,label])=>`<button data-tab="${key}" class="side-link ${S.screen===key?'active':''}"><span class="glyph">${icons[key]}</span>${label}${key==='requests'&&manager()&&S.requests.filter(r=>r.state==='pending').length?`<span class="notification-count">${S.requests.filter(r=>r.state==='pending').length}</span>`:''}</button>`).join('');
+  const mobiles=[['dashboard','Accueil'],['inventory','Stock'],['events','Événements'],['cleaning','Lavage'],['more','Plus']];
+  $('mobile-nav').innerHTML=mobiles.map(([key,label])=>`<button data-tab="${key}" class="mobile-link ${S.screen===key?'active':''}"><span class="glyph">${icons[key]||'☰'}</span>${label}</button>`).join('');
+  $('sidebar-user').innerHTML=`<div class="avatar">${esc(S.me.name?.[0]||'S')}</div><div><strong>${esc(S.me.name)}</strong><small>${ROLE[role()]}</small></div>`;
+  $('avatar').textContent=S.me.name?.[0]||'S';
+  $('breadcrumb').textContent=S.screen==='more'?'Menu':navBase.find(x=>x[0]===S.screen)?.[1]||'Sadeyen Stock';
+}
+function go(screen){S.screen=screen;S.eventId=null;renderNav();render();window.scrollTo({top:0,behavior:'instant'})}
+function render(){let html='';try{
+  if(S.screen==='dashboard')html=dashboard();
+  else if(S.screen==='inventory')html=inventory();
+  else if(S.screen==='events')html=S.eventId?eventDetail():events();
+  else if(S.screen==='moves')html=moves();
+  else if(S.screen==='cleaning')html=cleaning();
+  else if(S.screen==='requests')html=requests();
+  else if(S.screen==='history')html=history();
+  else if(S.screen==='users')html=users();
+  else if(S.screen==='settings')html=settings();
+  else if(S.screen==='more')html=more();
+  $('content').innerHTML=html;
+  bindFilters();
+}catch(e){console.error(e);$('content').innerHTML=`<div class="notice error">Problème d'affichage : ${esc(e.message)}</div>`}}
+function kpi(label,value,foot,icon,tone=''){return `<div class="kpi"><div class="kpi-top"><span class="kpi-label">${label}</span><span class="kpi-icon">${icon}</span></div><div class="kpi-number ${tone}">${num(value)}</div><div class="kpi-foot">${foot}</div></div>`}
+function upcoming(max=5){return [...S.events].filter(e=>e.status!=='cancelled'&&e.status!=='completed').sort((a,b)=>a.starts_at.localeCompare(b.starts_at)).slice(0,max)}
+function dashboard(){
+  const known=S.items.filter(x=>x.verified),unk=S.items.length-known.length;
+  const sum=k=>known.reduce((x,i)=>x+(i[k]||0),0),out=sum('out'),cleaning=sum('dirty')+sum('cleaning'),unusable=sum('damaged')+sum('missing');
+  const pending=S.requests.filter(x=>x.state==='pending');const low=known.filter(i=>i.minimum>0&&i.available<i.minimum);
+  const ev=upcoming(5);
+  const alerts=[...(pending.length&&manager()?[{label:`${pending.length} demande(s) à valider`,detail:'Des prestataires attendent votre confirmation.',act:'requests'}]:[]),...(unk?[{label:`${unk} référence(s) à compter`,detail:'Renseigner les quantités avant leur première sortie.',act:'inventory'}]:[]),...(cleaning?[{label:`${num(cleaning)} unité(s) au nettoyage`,detail:'À traiter pour remettre le stock à disposition.',act:'cleaning'}]:[]),...(low.length?[{label:`${low.length} alerte(s) de stock minimum`,detail:'Vérifier les équipements concernés.',act:'inventory'}]:[])];
+  return pIntro('VOTRE TABLEAU DE BORD','Bonjour, '+S.me.name.split(' ')[0]+' 👋','Votre matériel et vos événements, en un seul endroit.',manager()?btn('+ Nouvel événement','new-event'):'')+
+  `<div class="kpi-grid">${kpi('Stock disponible',sum('available'),'Unités physiquement disponibles','▣')}${kpi('Matériel sorti',out,'Actuellement affecté aux événements','↗')}${kpi('Nettoyage en cours',cleaning,'À laver ou chez le prestataire','◈','amber')}${kpi('Abîmé / manquant',unusable,'À réparer ou rechercher','!','red')}</div>`+
+  `<div class="columns"><section class="panel"><div class="panel-header"><div><h2>Prochains événements</h2><p class="subtitle">Anticipez les besoins en matériel</p></div><button class="link-btn" data-tab="events">Voir tous →</button></div><div class="panel-content">${ev.length?ev.map(e=>`<div class="list-row"><div class="event-line"><div class="event-date"><strong>${esc(new Date(e.starts_at).getDate())}</strong><br><span>${esc(new Date(e.starts_at).toLocaleDateString('fr-FR',{month:'short'}))}</span></div><div class="event-row-info"><strong>${esc(e.title)}</strong><small>${esc(e.client||e.location||'Sans client renseigné')} · ${e.reservations.length} matériel(s) prévu(s)</small></div></div><div class="actions">${tag(EVENT_STATUS[e.status][0],EVENT_STATUS[e.status][1])}<button class="link-btn" data-open-event="${e.id}">Ouvrir →</button></div></div>`).join(''):empty('Aucun événement à venir','Créez votre premier événement pour commencer.')}</div></section>`+
+  `<section class="panel"><div class="panel-header"><div><h2>À surveiller</h2><p class="subtitle">Priorités du domaine</p></div></div><div class="panel-content">${alerts.length?alerts.map(a=>`<div class="alert-line"><div class="alert-dot"></div><div style="flex:1"><strong>${esc(a.label)}</strong><p>${esc(a.detail)}</p></div><button class="link-btn" data-tab="${a.act}">Voir →</button></div>`).join(''):empty('Tout est à jour','Aucune alerte pour le moment.')}</div></section></div>`+
+  `<div class="panel pad"><h2>Le circuit du matériel</h2><div class="help-steps"><div class="step"><b>01</b><strong>Préparer et réserver</strong><p>Associez le matériel à un événement, puis vérifiez les quantités disponibles.</p></div><div class="step"><b>02</b><strong>Sortir et récupérer</strong><p>Notez les quantités parties et distinguez le matériel rendu propre, sale ou abîmé.</p></div><div class="step"><b>03</b><strong>Nettoyer et remettre en stock</strong><p>Le matériel ne redevient disponible qu'après validation du retour propre.</p></div></div></div>`;
+}
+function stockTag(i){if(!i.verified)return tag('À compter','amber');if(i.damaged||i.missing)return tag('À vérifier','red');if(i.minimum>0&&i.available<i.minimum)return tag('Stock faible','amber');return tag('Compté','green')}
+function inventory(){
+  const cats=[...new Set(S.items.map(i=>i.category))].sort();const f=S.filters;
+  let list=S.items.filter(i=>(!f.category||i.category===f.category)&&(!f.search||(i.name+' '+i.category).toLowerCase().includes(f.search.toLowerCase()))&&(f.stock==='all'||(f.stock==='unknown'&&!i.verified)||(f.stock==='used'&&(i.out+i.dirty+i.cleaning)>0)||(f.stock==='warning'&&(i.damaged+i.missing>0||i.minimum>0&&i.available<i.minimum))));
+  return pIntro('GESTION DES ÉQUIPEMENTS','Inventaire du domaine',`${S.items.length} références classées par désignation, avec leur état réel.`,manager()?btn('+ Ajouter un équipement','new-item'):'')+
+  `<section class="panel"><div class="panel-header"><div><h2>Liste du matériel</h2><p class="subtitle">Quantités inconnues signalées « À compter »</p></div>${tag(`${list.length} résultats`)}</div><div class="filters"><input class="search" id="item-search" placeholder="Rechercher un équipement…" value="${esc(f.search)}"><select class="filter-sel" id="category-filter">${namedOption('','Toutes les catégories',!f.category)}${cats.map(c=>namedOption(c,c,f.category===c)).join('')}</select></div><div class="chip-tabs">${[['all','Tous'],['unknown','À compter'],['used','En circulation'],['warning','À surveiller']].map(([k,l])=>`<button class="chip ${f.stock===k?'active':''}" data-stock="${k}">${l}</button>`).join('')}</div><div class="table-scroll"><table class="data-table"><thead><tr><th>Désignation</th><th>Équipement</th><th>Total</th><th>Disponible</th><th>Sorti</th><th>À laver</th><th>Chez nettoyeur</th><th>État</th><th></th></tr></thead><tbody>${list.map(i=>`<tr><td class="smalltext muted">${esc(i.category)}</td><td><b>${esc(i.name)}</b><small>${esc(i.unit||'pièce')}${i.notes?' · '+esc(i.notes.slice(0,40)):''}</small></td><td class="number">${i.verified?num(i.total):'<span class="unknown">—</span>'}</td><td class="number">${i.verified?num(i.available):'—'}</td><td>${num(i.out)}</td><td>${num(i.dirty)}</td><td>${num(i.cleaning)}</td><td>${stockTag(i)}</td><td>${manager()?`<button class="link-btn" data-edit-item="${i.id}">Modifier</button>`:''}</td></tr>`).join('')}</tbody></table>${!list.length?empty('Aucun matériel pour ce filtre'):''}</div></section><p class="sheet-footer">Source initiale : inventaire « Inventaire domaine » sur Google Drive. Les quantités non vérifiées ne sont pas considérées comme disponibles.</p>`;
+}
+function events(){const ev=[...S.events].sort((a,b)=>b.starts_at.localeCompare(a.starts_at));return pIntro('PLANIFICATION','Événements','Créez vos événements, réservez le matériel et suivez les retours.',manager()?btn('+ Créer un événement','new-event'):'')+`<div class="event-cards">${ev.map(e=>`<article class="event-card" data-open-event="${e.id}"><div class="card-top">${tag(EVENT_STATUS[e.status][0],EVENT_STATUS[e.status][1])}<span class="date-box">${datestr(e.starts_at)}</span></div><h3>${esc(e.title)}</h3><p>${esc(e.client||e.location||'Domaine Sadeyen')}</p><footer><span>▤ ${e.reservations.length} références prévues</span><span>${e.positions.reduce((n,p)=>n+(p.bucket==='out'?p.qty:0),0)} en utilisation →</span></footer></article>`).join('')}</div>${!ev.length?`<div class="panel">${empty('Aucun événement','Ajoutez un événement pour prévoir votre matériel.')}</div>`:''}`}
+function eventDetail(){const e=eventById(S.eventId);if(!e)return empty('Événement introuvable');const counts={out:0,dirty:0,cleaning:0,damaged:0,missing:0};e.positions.forEach(p=>counts[p.bucket]=(counts[p.bucket]||0)+p.qty);
+ const people=S.users.filter(u=>e.assigned_ids.includes(u.id));const assigned=people.length?people.map(u=>`${esc(u.name)} ${tag(ROLE[u.role])} ${manager()?`<button class="link-btn" data-unassign="${u.id}" data-event="${e.id}">Retirer</button>`:''}`).join(' · '):'Aucun prestataire affecté';
+ const combined=new Map();for(const r of e.reservations){combined.set(r.item_id,{id:r.item_id,name:r.name,cat:r.category,unit:r.unit,qty:r.qty})}for(const p of e.positions){if(!combined.has(p.item_id))combined.set(p.item_id,{id:p.item_id,name:p.name,cat:p.category,unit:p.unit,qty:0})}
+ return `<button class="back-link" data-tab="events">← Tous les événements</button><div class="detail-header"><div><div class="eyebrow" style="color:#b9cbb8">FICHE ÉVÉNEMENT · ${tag(EVENT_STATUS[e.status][0],EVENT_STATUS[e.status][1])}</div><h2>${esc(e.title)}</h2><p>◷ ${dateTime(e.starts_at)} → ${dateTime(e.ends_at)}<br>${esc(e.client||'Client non renseigné')} · ${esc(e.location||'Domaine Sadeyen')}</p></div><div class="detail-buttons">${manager()?btn('Modifier','edit-event',`data-id="${e.id}"`,'outline'):''}${btn('Fiche imprimable','print-event',`data-id="${e.id}"`,'outline')}</div></div>
+ <div class="detail-metrics" style="margin-bottom:18px"><div class="detail-metric"><strong>${e.reservations.reduce((x,r)=>x+r.qty,0)}</strong><small>Unités prévues</small></div><div class="detail-metric"><strong>${counts.out||0}</strong><small>En utilisation</small></div><div class="detail-metric"><strong>${(counts.dirty||0)+(counts.cleaning||0)}</strong><small>En nettoyage</small></div></div>
+ <div class="panel"><div class="panel-header"><div><h2>Matériel prévu et utilisé</h2><p class="subtitle">Les réservations s'appliquent aux dates de cet événement</p></div>${manager()?btn('+ Réserver','reserve-item',`data-event="${e.id}"`,'outline'):''}</div><div class="table-scroll"><table class="data-table"><thead><tr><th>Désignation</th><th>Équipement</th><th>Prévu</th><th>Sorti</th><th>Sale</th><th>Nettoyage</th><th>Casse / perte</th><th></th></tr></thead><tbody>${[...combined.values()].map(x=>{const get=b=>e.positions.filter(p=>p.item_id===x.id&&p.bucket===b).reduce((n,v)=>n+v.qty,0);return `<tr><td class="muted">${esc(x.cat)}</td><td><b>${esc(x.name)}</b></td><td><b>${x.qty}</b></td><td>${get('out')}</td><td>${get('dirty')}</td><td>${get('cleaning')}</td><td>${get('damaged')+get('missing')}</td><td>${manager()?`<button class="link-btn" data-edit-reservation="${x.id}" data-event="${e.id}">Modifier</button>`:''}</td></tr>`}).join('')}</tbody></table>${!combined.size?empty('Aucun matériel prévu','Réservez des équipements pour préparer la sortie.'):''}</div></div>
+ <div class="columns"><section class="panel pad"><div class="panel-header" style="padding:0 0 12px"><h2>Mouvements</h2>${btn('Enregistrer une sortie / retour','new-move',`data-event="${e.id}"`,'outline')}</div><p class="muted smalltext">Utilisez le formulaire pour déclarer le matériel sorti, rendu propre, envoyé au nettoyage ou détérioré.</p></section>
+ <section class="panel pad"><div class="panel-header" style="padding:0 0 12px"><h2>Prestataires autorisés</h2>${manager()?btn('+ Affecter','assign-user',`data-event="${e.id}"`,'outline'):''}</div><p class="smalltext muted">${assigned}</p></section></div>
+ <div class="print-sheet"><h1>Fiche de sortie · ${esc(e.title)}</h1><p>${dateTime(e.starts_at)} – ${dateTime(e.ends_at)}</p><table><thead><tr><th>Matériel</th><th>Qté prévue</th><th>Sortie</th><th>Retour propre</th><th>Nettoyage</th><th>Observations</th></tr></thead><tbody>${[...combined.values()].map(x=>`<tr><td>${esc(x.name)}</td><td>${x.qty}</td><td>________</td><td>________</td><td>________</td><td>________________</td></tr>`).join('')}</tbody></table><p>Responsable : _________________________ Signature : _________________________</p></div>`;
+}
+function moves(){const actions=role()==='provider'?['return_clean','return_dirty','damage','missing']:role()==='cleaner'?['send_cleaning','receive_clean','clean_onsite']:Object.keys(OPERATIONS);
+ const recent=manager()?S.history.slice(0,8):S.requests.slice(0,8);
+ return pIntro('TRAÇABILITÉ','Mouvements de matériel','Chaque sortie et chaque retour sont associés à un événement et à une personne.',btn(role()==='provider'||role()==='cleaner'?'+ Faire une déclaration':'+ Enregistrer un mouvement','new-move'))+
+ `<div class="panel pad"><h2>Les actions disponibles</h2><p class="subtitle">${manager()?'L’enregistrement met immédiatement à jour les quantités.':'Votre déclaration sera transmise à l’équipe pour validation avant modification du stock.'}</p><div class="action-grid" style="margin-top:18px">${actions.map(k=>`<button class="action-option" data-act="new-move" data-operation="${k}">${esc(OPERATIONS[k][0])}<small>${esc(OPERATIONS[k][1])}</small></button>`).join('')}</div></div><div class="panel"><div class="panel-header"><h2>${manager()?'Derniers mouvements enregistrés':'Mes déclarations'}</h2><button class="link-btn" data-tab="${manager()?'history':'requests'}">Voir tout →</button></div><div class="panel-content">${recent.length?recent.map(x=>`<div class="list-row"><div><strong>${esc(x.item_name)}</strong><small>${esc((OPERATIONS[x.action]||[])[0]||x.action)} · ${esc(x.event_title)} · ${dateTime(x.created_at)}</small></div>${x.state?tag(x.state==='approved'?'Validé':x.state==='pending'?'En attente':'Refusé',x.state==='approved'?'green':x.state==='pending'?'amber':'red'):tag(x.qty+' pièce(s)')}</div>`).join(''):empty('Pas de mouvement','Chaque opération apparaîtra ici.')}</div></div>`;
+}
+function cleaning(){const buckets=[];for(const e of S.events)for(const p of e.positions)if(p.bucket==='dirty'||p.bucket==='cleaning')buckets.push({...p,event:e});
+ const dirty=buckets.filter(x=>x.bucket==='dirty');const atCleaner=buckets.filter(x=>x.bucket==='cleaning');
+ function card(x){return `<div class="clean-card"><div><strong>${esc(x.name)}</strong><small>${esc(x.event.title)} · ${esc(x.category)}</small></div><div style="text-align:right"><div class="clean-number">${x.qty}</div><button class="btn outline small" data-act="new-move" data-event="${x.event.id}" data-item="${x.item_id}" data-operation="${x.bucket==='dirty'?'send_cleaning':'receive_clean'}">${x.bucket==='dirty'?'Envoyer':'Réceptionner'}</button></div></div>`}
+ return pIntro('CIRCUIT DE NETTOYAGE','Nettoyage & retour','Visualisez ce qui doit être lavé et ce qui est actuellement chez le prestataire.')+`<div class="kpi-grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">${kpi('À nettoyer',dirty.reduce((n,x)=>n+x.qty,0),'En attente de prise en charge','◈','amber')}${kpi('Chez le nettoyeur',atCleaner.reduce((n,x)=>n+x.qty,0),'Retour en stock non encore confirmé','⇄')}</div><div class="cleaning-grid"><div class="panel pad"><h2>À nettoyer</h2><p class="subtitle">Après retour sale de l'événement</p><div style="margin-top:15px">${dirty.length?dirty.map(card).join(''):empty('Aucun matériel à laver')}</div></div><div class="panel pad"><h2>Chez le prestataire</h2><p class="subtitle">Confirmer le retour pour le remettre à disposition</p><div style="margin-top:15px">${atCleaner.length?atCleaner.map(card).join(''):empty('Aucun matériel en blanchisserie')}</div></div></div><div class="notice info">Un article « à nettoyer » ou « chez le nettoyeur » n'est jamais compté dans le stock disponible. Le retour propre l'y réintègre automatiquement.</div>`;
+}
+function requests(){const list=manager()?S.requests:S.requests.filter(x=>x.user_id===S.me.id);const pending=list.filter(x=>x.state==='pending').length;
+ return pIntro('CONTRÔLE DES OPÉRATIONS',manager()?'Demandes à valider':'Mes déclarations',manager()?`${pending} demande(s) en attente de validation.`:'Vos déclarations sont validées ou refusées par l’équipe du domaine.')+
+ `<section class="panel"><div class="panel-header"><h2>Déclarations reçues</h2>${tag(`${list.length} demande(s)`)}</div><div class="table-scroll"><table class="data-table"><thead><tr><th>Date</th><th>Prestataire</th><th>Événement</th><th>Matériel</th><th>Opération</th><th>Quantité</th><th>Statut</th><th></th></tr></thead><tbody>${list.map(r=>`<tr><td>${dateTime(r.created_at)}</td><td>${esc(r.requester_name)}</td><td>${esc(r.event_title)}</td><td><b>${esc(r.item_name)}</b><small>${esc(r.note)}</small></td><td>${esc((OPERATIONS[r.action]||[])[0]||r.action)}</td><td>${r.qty}</td><td>${tag(r.state==='pending'?'En attente':r.state==='approved'?'Validée':'Refusée',r.state==='pending'?'amber':r.state==='approved'?'green':'red')}</td><td>${manager()&&r.state==='pending'?`<div class="lineactions"><button class="btn soft small" data-review="${r.id}" data-decision="approve">Valider</button><button class="btn danger small" data-review="${r.id}" data-decision="reject">Refuser</button></div>`:''}</td></tr>`).join('')}</tbody></table>${!list.length?empty('Aucune demande pour le moment'):''}</div></section>`;
+}
+function history(){
+ const audit=S.filters.historyType==='inventory';
+ const source=audit?(S.inventory_audit||[]):S.history;
+ const v=source.filter(x=>!S.filters.historySearch||(x.item_name+' '+(x.event_title||'')+' '+x.actor_name).toLowerCase().includes(S.filters.historySearch.toLowerCase()));
+ return pIntro('JOURNAL D’AUDIT','Historique des opérations','Retrouvez les mouvements validés et toutes les modifications de quantités.',btn('Exporter mouvements CSV','csv-history','','outline'))+
+ `<div class="panel"><div class="panel-header"><div><h2>${audit?'Corrections de l’inventaire':'Mouvements de matériel'}</h2><p class="subtitle">${source.length} dernières écritures disponibles</p></div></div><div class="chip-tabs"><button class="chip ${!audit?'active':''}" data-history-type="movements">Sorties & retours</button><button class="chip ${audit?'active':''}" data-history-type="inventory">Modifications du stock</button></div><div class="filters"><input class="search" id="history-search" placeholder="Chercher matériel, événement ou personne" value="${esc(S.filters.historySearch)}"></div><div class="table-scroll"><table class="data-table"><thead>${audit?'<tr><th>Date</th><th>Matériel</th><th>Avant</th><th>Après</th><th>Motif</th><th>Par</th></tr>':'<tr><th>Date et heure</th><th>Matériel</th><th>Opération</th><th>Qté</th><th>Événement</th><th>Par</th><th>Note</th></tr>'}</thead><tbody>${audit?v.map(x=>`<tr><td>${dateTime(x.created_at)}</td><td><b>${esc(x.item_name)}</b><small>${esc(x.category)}</small></td><td>${x.previous_verified?x.previous_total:'Non compté'}</td><td>${x.new_verified?x.new_total:'Non compté'}</td><td>${esc(x.reason)}</td><td>${esc(x.actor_name)}</td></tr>`).join(''):v.map(l=>`<tr><td>${dateTime(l.created_at)}</td><td><b>${esc(l.item_name)}</b><small>${esc(l.category)}</small></td><td>${esc((OPERATIONS[l.action]||[])[0]||l.action)}</td><td>${l.qty}</td><td>${esc(l.event_title)}</td><td>${esc(l.actor_name)}</td><td>${esc(l.note||'—')}</td></tr>`).join('')}</tbody></table>${!v.length?empty('Aucun résultat'):''}</div></div>`
+}
+function users(){return pIntro('GESTION DES ACCÈS','Équipe et prestataires','Contrôlez qui peut consulter les événements et modifier le matériel.',btn('+ Ajouter un utilisateur','new-user'))+
+ `<section class="panel"><div class="panel-header"><div><h2>Comptes utilisateurs</h2><p class="subtitle">Les prestataires n’accèdent qu’aux événements auxquels ils sont affectés.</p></div></div><div class="table-scroll"><table class="data-table"><thead><tr><th>Personne</th><th>Identifiant</th><th>Rôle</th><th>Accès</th><th></th></tr></thead><tbody>${S.users.map(u=>`<tr><td><b>${esc(u.name)}</b></td><td>${esc(u.username)}</td><td>${tag(ROLE[u.role],u.role==='admin'?'green':u.role==='team'?'blue':'gray')}</td><td>${tag(u.active?'Actif':'Suspendu',u.active?'green':'red')}</td><td><div class="lineactions">${btn('Modifier','edit-user',`data-id="${u.id}"`,'outline small')}${btn('Mot de passe','reset-password',`data-id="${u.id}"`,'outline small')}</div></td></tr>`).join('')}</tbody></table></div></section><div class="notice info">Conseil : créez un compte distinct pour chaque personne. L’historique conserve l'identité du compte qui a validé chaque mouvement.</div>`;
+}
+function more(){const picks=[['moves','Mouvements','Déclarer sorties, retours et casse'],['requests','Validations','Demandes des prestataires et de l’équipe'],...(manager()?[['history','Historique','Toutes les opérations validées']]:[]),...(admin()?[['users','Utilisateurs','Équipe, prestataires et permissions']]:[]),['settings','Paramètres','Sauvegardes, import et compte']];return pIntro('NAVIGATION','Toutes les fonctions','Accédez aux autres outils de gestion.')+`<div class="event-cards">${picks.map(([id,title,desc])=>`<button data-tab="${id}" class="event-card" style="text-align:left"><div class="card-top"><span class="kpi-icon">${icons[id]}</span><span>→</span></div><h3>${title}</h3><p>${desc}</p></button>`).join('')}</div>`}
+function settings(){return pIntro('CONFIGURATION','Paramètres','Vos données, vos sauvegardes et la sécurité de votre compte.')+
+ `<div class="setting-block"><h2>Votre compte</h2><p>Connecté en tant que ${esc(S.me.name)} · ${esc(ROLE[role()])}. Un mot de passe personnel protège votre accès.</p><button class="btn outline" data-act="change-password">Changer mon mot de passe</button></div>${manager()?`<div class="setting-block"><h2>Importer l'inventaire Google Sheets</h2><p>Importez un fichier CSV avec les colonnes « Désignation », « Matériel / équipement » et « Quantité en stock ». Les quantités vides restent inconnues : elles ne sont pas inventées. Les mouvements existants restent conservés.</p><label class="smalltext">Choisir le fichier CSV<input type="file" id="csv-file" accept=".csv,text/csv"></label><div class="actions" style="display:flex;gap:9px;flex-wrap:wrap;margin-top:14px"><button class="btn primary" data-act="import-csv">Importer le CSV</button><button class="btn outline" data-act="csv-inventory">Exporter l'inventaire CSV</button></div><p><a href="https://docs.google.com/spreadsheets/d/10VnGixW4cygLjMDPHnxPDfAbB-JYeB0D46o3FEHHceY/edit" target="_blank" rel="noopener">Ouvrir l'inventaire Google Drive ↗</a></p></div>`:''}${admin()?`<div class="setting-block"><h2>Sauvegarde des données</h2><p>Exportez l'inventaire, les événements, les réservations, les mouvements et l'historique des demandes au format JSON. Les mots de passe ne sont pas inclus.</p><button class="btn outline" data-act="json-export">Télécharger une copie JSON</button></div>`:''}<div class="setting-block"><h2>À propos de Sadeyen Stock</h2><p>Version 1.0 · Application multi-utilisateurs avec base de données SQLite. Les stocks sont enregistrés sur le serveur : ils sont partagés entre les appareils connectés à la même instance, avec actualisation automatique. Les déclarations des prestataires nécessitent validation.</p><div class="notice info">L’application nécessite une connexion au serveur pour enregistrer des opérations. Pour un accès public, le serveur doit être hébergé sous HTTPS avec un stockage persistant.</div></div>`;
+}
+function bindFilters(){
+  const search=$('item-search');if(search){search.oninput=e=>{S.filters.search=e.target.value;const pos=e.target.selectionStart;render();const n=$('item-search');n.focus();n.setSelectionRange(pos,pos)}}
+  const cat=$('category-filter');if(cat)cat.onchange=e=>{S.filters.category=e.target.value;render()};
+  const h=$('history-search');if(h)h.oninput=e=>{S.filters.historySearch=e.target.value;render();$('history-search')?.focus()};
+}
+function editItem(id){const i=itemById(id)||{category:'',name:'',unit:'pièce',verified:0,total:0,minimum:0,notes:''};const original=!!id;
+ const html=`<div class="form-grid">${formFld('Désignation / catégorie','category',i.category,'text','required')}${formFld('Matériel','name',i.name,'text','required')}${formFld('Unité','unit',i.unit)}${formFld('Stock minimum (alerte)','minimum',i.minimum,'number','min="0" step="1"')}<div class="wide"><label class="check"><input type="checkbox" name="verified" ${i.verified?'checked':''}> Quantité vérifiée physiquement</label><p class="form-help">Décochez si l'équipement n'a pas encore été compté. Les quantités inconnues ne seront pas utilisables.</p></div>${formFld('Quantité totale constatée','total',i.total,'number','min="0" step="1"')}<div class="wide">${textFld('Observations','notes',i.notes)}</div></div>`;
+ openModal(original?'Modifier un équipement':'Ajouter un équipement',html,async f=>{const body={category:f.elements.namedItem('category').value.trim(),name:f.elements.namedItem('name').value.trim(),unit:f.unit.value.trim(),verified:f.verified.checked,total:Number(f.total.value),minimum:Number(f.minimum.value),notes:f.notes.value};await update(original?`/api/items/${id}`:'/api/items',original?'PATCH':'POST',body)},original?'Enregistrer les modifications':'Ajouter au stock')}
+function eventModal(id){const e=eventById(id);const defstart=new Date(Date.now()+3600000).toISOString().slice(0,16);const defend=new Date(Date.now()+4*3600000).toISOString().slice(0,16);const x=e||{title:'',starts_at:defstart,ends_at:defend,client:'',location:'Domaine Sadeyen',manager:S.me.name,status:'planned',notes:''};
+ const html=`<div class="form-grid">${formFld('Nom de l’événement','title',x.title,'text','required')}${selectFld('Statut','status',Object.entries(EVENT_STATUS).map(([k,v])=>[k,v[0]]),x.status)}${formFld('Début','starts_at',x.starts_at,'datetime-local','required')}${formFld('Fin','ends_at',x.ends_at,'datetime-local','required')}${formFld('Client / entreprise','client',x.client)}${formFld('Lieu','location',x.location)}${formFld('Responsable','manager',x.manager)}<div class="wide">${textFld('Remarques et organisation','notes',x.notes)}</div></div>`;
+ openModal(id?'Modifier l’événement':'Nouvel événement',html,async f=>{const body=Object.fromEntries(new FormData(f));const r=await update(id?`/api/events/${id}`:'/api/events',id?'PATCH':'POST',body);if(!id&&r){S.screen='events';S.eventId=r.id;renderNav();render()}},id?'Enregistrer':'Créer l’événement')}
+function reserveModal(eventId,itemId=null){const ev=eventById(eventId);const current=ev?.reservations.find(r=>r.item_id===itemId);const eligible=S.items.filter(i=>i.verified);const html=`<div class="notice info">Les réservations sont vérifiées par rapport aux autres événements sur les mêmes dates.</div>${selectFld('Matériel à réserver','item_id',eligible.map(i=>[i.id,`${i.category} — ${i.name} (${i.available} disponibles maintenant)`]),itemId||eligible[0]?.id)}${formFld('Quantité prévue (0 = retirer)','qty',current?.qty??1,'number','min="0" step="1" required')}`;
+ openModal(current?'Modifier la réservation':'Réserver du matériel',html,async f=>{await update('/api/reservations','POST',{event_id:eventId,item_id:Number(f.item_id.value),qty:Number(f.qty.value)})},'Mettre à jour')}
+function moveModal(eventId=null,itemId=null,operation=null){const isExternal=!manager();let ev=eventId?eventById(eventId):S.events.find(e=>e.status!=='cancelled'&&e.status!=='completed');
+ const eligible=S.events.filter(e=>e.status!=='cancelled');let selectedEvent=ev||eligible[0];
+ if(!selectedEvent)return notify('Créez d’abord un événement pour associer le mouvement.',true);
+ const opKeys=isExternal?(role()==='cleaner'?['send_cleaning','receive_clean','clean_onsite']:['return_clean','return_dirty','damage','missing']):Object.keys(OPERATIONS);
+ const defaultOp=opKeys.includes(operation)?operation:opKeys[0];
+ const allowedItems=isExternal?S.items.filter(i=>selectedEvent.reservations.some(r=>r.item_id===i.id)||selectedEvent.positions.some(p=>p.item_id===i.id)):S.items.filter(i=>i.verified);
+ const selItem=itemId&&allowedItems.find(i=>i.id===itemId)?itemId:allowedItems[0]?.id;
+ if(!allowedItems.length)return notify('Aucun matériel compté ou affecté à cet événement.',true);
+ const html=`<div class="notice ${isExternal?'info':''}">${isExternal?'Votre déclaration sera soumise à validation par l’équipe.':'La quantité en stock est mise à jour dès la validation.'}</div><div class="form-grid">${selectFld('Événement','event_id',eligible.map(x=>[x.id,x.title+' · '+datestr(x.starts_at)]),selectedEvent.id)}${selectFld('Matériel','item_id',allowedItems.map(x=>[x.id,x.category+' — '+x.name]),selItem)}<div class="wide">${selectFld('Opération','action',opKeys.map(k=>[k,OPERATIONS[k][0]]),defaultOp)}</div>${formFld('Quantité','qty',1,'number','min="1" step="1" required')}<div></div><div class="wide">${textFld('Remarque / état constaté','note','')}</div></div><p class="form-help" id="movement-hint">Vérifiez la quantité disponible pour cette opération.</p>`;
+ openModal(isExternal?'Déclarer un mouvement':'Enregistrer un mouvement',html,async f=>{await update('/api/movements','POST',{event_id:Number(f.event_id.value),item_id:Number(f.item_id.value),action:f.elements.namedItem('action').value,qty:Number(f.qty.value),note:f.note.value})},isExternal?'Envoyer pour validation':'Valider le mouvement');
+ const form=$('modal-form');const recalc=()=>{
+   const selectedEv=eventById(form.event_id.value);if(!selectedEv)return;
+   const old=form.item_id.value;
+   if(isExternal){const options=S.items.filter(i=>selectedEv.reservations.some(r=>r.item_id===i.id)||selectedEv.positions.some(p=>p.item_id===i.id));form.item_id.innerHTML=options.map(i=>namedOption(i.id,i.category+' — '+i.name,Number(old)===i.id)).join('')}
+   const item=itemById(form.elements.namedItem('item_id').value),act=form.elements.namedItem('action').value,evt=Number(form.event_id.value);
+   const source={return_clean:'out',return_dirty:'out',send_cleaning:'dirty',receive_clean:'cleaning',clean_onsite:'dirty',damage:'out',missing:'out',repair:'damaged',found:'missing'}[act];
+   const n=source?selectedEv.positions.filter(x=>x.item_id===item?.id&&x.bucket===source).reduce((n,x)=>n+x.qty,0):item?.available;
+   $('movement-hint').textContent=typeof n==='number'?'Quantité disponible pour cette opération : '+n:'La disponibilité sera vérifiée à la validation.';
+ };
+ form.event_id.onchange=recalc;form.elements.namedItem('action').onchange=recalc;form.item_id.onchange=recalc;recalc();
+}
+function assignmentModal(eventId){const ev=eventById(eventId);const available=S.users.filter(u=>u.active&&['provider','cleaner'].includes(u.role)&&!ev.assigned_ids.includes(u.id));if(!available.length){notify('Ajoutez d’abord un compte prestataire dans Utilisateurs.',true);return}openModal('Affecter un prestataire',selectFld('Personne autorisée','user_id',available.map(u=>[u.id,u.name+' · '+ROLE[u.role]])),async f=>{await update(`/api/events/${eventId}/assign`,'POST',{user_id:Number(f.user_id.value)})},'Autoriser l’accès')}
+function userModal(id){const u=S.users.find(x=>x.id===id)||{name:'',username:'',role:'provider',active:true};let original=!!id;
+ const html=`<div class="form-grid">${formFld('Nom affiché','name',u.name,'text','required')}${!original?formFld('Identifiant','username',u.username,'text','required'):''}${selectFld('Rôle','role',Object.entries(ROLE),u.role)}${!original?formFld('Mot de passe initial (12 caractères min.)','password','','password','required minlength="12"'):''}${original?`<div class="wide"><label class="check"><input type="checkbox" name="active" ${u.active?'checked':''}> Compte actif</label></div>`:''}</div>`;
+ openModal(original?'Modifier le compte':'Nouvel utilisateur',html,async f=>{const body={name:f.elements.namedItem('name').value,role:f.elements.namedItem('role').value};if(original)body.active=f.active.checked;else{body.username=f.username.value;body.password=f.password.value}await update(original?`/api/users/${id}`:'/api/users',original?'PATCH':'POST',body)},original?'Enregistrer':'Créer le compte')}
+function passwordModal(userId=null,forced=false){const reset=Number.isInteger(userId);const html=reset?`<p class="muted">L'utilisateur devra modifier le mot de passe choisi à sa prochaine connexion.</p>${formFld('Nouveau mot de passe provisoire','password','','password','required minlength="12"')}`:`<p class="muted">${forced?'Pour sécuriser le compte, modifiez le mot de passe initial avant de poursuivre.':'Votre mot de passe doit contenir au moins 12 caractères.'}</p>${formFld('Ancien mot de passe','old_password','','password','required')}${formFld('Nouveau mot de passe','new_password','','password','required minlength="12"')}`;
+ openModal(reset?'Réinitialiser un mot de passe':forced?'Sécuriser votre première connexion':'Changer mon mot de passe',html,async f=>{await update(reset?`/api/users/${userId}/password`:'/api/account/password','POST',reset?{password:f.password.value}:{old_password:f.old_password.value,new_password:f.new_password.value});if(forced)await refresh()},'Valider');
+ if(forced){$('modal-close').disabled=true;$('modal-cancel').disabled=true}
+}
+function saveFile(name,text,type){const blob=new Blob([text],{type}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}
+function csvText(rows){return '\ufeff'+rows.map(row=>row.map(value=>'"'+String(value??'').replace(/"/g,'""')+'"').join(';')).join('\r\n')}
+function exportInventory(){const r=[['Désignation','Matériel / équipement','Quantité en stock','Unité','État du relevé','Disponible','Sorti','À laver','Chez nettoyeur','Abîmé','Manquant','Notes'],...S.items.map(i=>[i.category,i.name,i.verified?i.total:'',i.unit,i.verified?'Compté':'À compter',i.verified?i.available:'',i.out,i.dirty,i.cleaning,i.damaged,i.missing,i.notes])];saveFile('sadeyen-inventaire.csv',csvText(r),'text/csv;charset=utf-8')}
+function exportHistory(){const r=[['Date','Matériel','Action','Quantité','Événement','Responsable','Note'],...S.history.map(x=>[x.created_at,x.item_name,(OPERATIONS[x.action]||[])[0]||x.action,x.qty,x.event_title,x.actor_name,x.note])];saveFile('sadeyen-mouvements.csv',csvText(r),'text/csv;charset=utf-8')}
+function parseCSV(text){const delim=(text.split(/\r?\n/,1)[0].match(/;/g)||[]).length>(text.split(/\r?\n/,1)[0].match(/,/g)||[]).length?';':',';let out=[],row=[],val='',quoted=false;for(let i=0;i<text.length;i++){let c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){val+='"';i++}else quoted=!quoted}else if(!quoted&&c===delim){row.push(val);val=''}else if(!quoted&&(c==='\n'||c==='\r')){if(c==='\r'&&text[i+1]==='\n')i++;row.push(val);if(row.some(x=>x.trim()))out.push(row);row=[];val=''}else val+=c}row.push(val);if(row.some(x=>x.trim()))out.push(row);return out}
+async function importCsv(){const file=$('csv-file')?.files?.[0];if(!file)return notify('Sélectionnez d’abord un fichier CSV.',true);try{const r=parseCSV((await file.text()).replace(/^\ufeff/,''));if(!r.length)throw Error('Fichier vide');const headers=r[0].map(x=>x.trim().toLowerCase());const col=names=>headers.findIndex(x=>names.includes(x));const a=col(['désignation','catégorie']),b=col(['matériel / équipement','équipement','matériel']),c=col(['quantité en stock','stock connu','quantité','total']),d=col(['unité']),f=col(['observations','notes']);if(a<0||b<0||c<0)throw Error('Colonnes requises : Désignation, Matériel / équipement, Quantité en stock');const items=r.slice(1).filter(x=>x[a]?.trim()&&x[b]?.trim()).map(x=>({category:x[a],name:x[b],total:x[c]?.trim()===''?null:Number(x[c].replace(/\s/g,'')),unit:d>=0?x[d]:undefined,notes:f>=0?x[f]:undefined}));if(!items.length)throw Error('Aucune ligne de matériel reconnue');if(!confirm(`Importer ${items.length} références ? Les mouvements existants resteront conservés.`))return;await update('/api/items/import','POST',{items})}catch(e){notify(e.message,true)}}
+async function review(id,decision){try{await update(`/api/requests/${id}/${decision}`,'POST',{})}catch{}}
+function handleClick(event){const t=event.target.closest('button,[data-open-event],.event-card');if(!t||t.disabled)return;
+ const tab=t.dataset.tab;if(tab){go(tab);return}
+ if(t.dataset.openEvent){S.eventId=Number(t.dataset.openEvent);S.screen='events';renderNav();render();window.scrollTo({top:0,behavior:'instant'});return}
+ if(t.dataset.editItem){editItem(Number(t.dataset.editItem));return}
+ if(t.dataset.historyType){S.filters.historyType=t.dataset.historyType;render();return}
+ if(t.dataset.review){review(Number(t.dataset.review),t.dataset.decision);return}
+ if(t.dataset.unassign){if(confirm('Retirer l’accès de cette personne à cet événement ?'))update(`/api/events/${t.dataset.event}/assign/${t.dataset.unassign}`,'DELETE',{}).catch(()=>{});return}
+ if(t.dataset.editReservation){reserveModal(Number(t.dataset.event),Number(t.dataset.editReservation));return}
+ const a=t.dataset.act;
+ if(a==='new-item')editItem(null);
+ if(a==='new-event')eventModal(null);
+ if(a==='edit-event')eventModal(Number(t.dataset.id));
+ if(a==='new-move')moveModal(t.dataset.event?Number(t.dataset.event):null,t.dataset.item?Number(t.dataset.item):null,t.dataset.operation||null);
+ if(a==='reserve-item')reserveModal(Number(t.dataset.event));
+ if(a==='assign-user')assignmentModal(Number(t.dataset.event));
+ if(a==='print-event')window.print();
+ if(a==='new-user')userModal(null);
+ if(a==='edit-user')userModal(Number(t.dataset.id));
+ if(a==='reset-password')passwordModal(Number(t.dataset.id));
+ if(a==='change-password')passwordModal();
+ if(a==='csv-inventory')exportInventory();
+ if(a==='csv-history')exportHistory();
+ if(a==='import-csv')importCsv();
+ if(a==='json-export')api('/api/export').then(x=>saveFile('sadeyen-sauvegarde-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(x,null,2),'application/json')).catch(e=>notify(e.message,true));
+}
+async function init(){
+ $('login-form').onsubmit=async e=>{e.preventDefault();$('login-error').textContent='';const f=new FormData(e.target);try{const me=await api('/api/login','POST',{username:f.get('username'),password:f.get('password')});S.me=me;await refresh();showApp();if(me.must_change)passwordModal(null,true)}catch(err){$('login-error').textContent=err.message}};
+ $('logout').onclick=async()=>{try{await api('/api/logout','POST',{})}catch{}showLogin()};
+ $('modal-close').onclick=closeModal;$('modal-cancel').onclick=closeModal;
+ $('modal-backdrop').onclick=e=>{if(e.target===$('modal-backdrop')&&!S.me?.must_change)closeModal()};
+ $('modal-form').onsubmit=async e=>{e.preventDefault();if(!modalHandler)return;const fn=modalHandler;try{await fn(e.target)}catch{}};
+ document.addEventListener('click',handleClick);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('modal-backdrop').classList.contains('hidden')&&!S.me?.must_change)closeModal()});
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&S.me&&$('modal-backdrop').classList.contains('hidden'))refresh().catch(()=>{})});
+ try{S.me=await api('/api/me');await refresh();showApp();if(S.me.must_change)passwordModal(null,true)}catch{showLogin()}
+ setInterval(()=>{if(S.me&&!document.hidden&&$('modal-backdrop').classList.contains('hidden'))refresh().catch(()=>{const o=document.querySelector('.online');if(o)o.innerHTML='<i style="background:#cb8558"></i> Hors connexion'})},18000);
+ if('serviceWorker' in navigator&&location.protocol.startsWith('http'))Promise.resolve().catch(()=>{});
+}
+init();
+
+</script>
+</body></html>
