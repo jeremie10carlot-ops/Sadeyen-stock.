@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: sadeyen-stock
+    runtime: docker
+    plan: starter
+    disk:
+      name: sadeyen-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: SADEYEN_DATA_DIR
+        value: /app/data
+      - key: SADEYEN_SECURE_COOKIE
+        value: '1'
+      - key: SADEYEN_ADMIN_USER
+        value: admin
+      - key: SADEYEN_ADMIN_PASSWORD
+        sync: false
