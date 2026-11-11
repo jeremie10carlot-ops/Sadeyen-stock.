@@ -80,7 +80,7 @@ function eventName(id){try{return (db.events||[]).find(x=>String(x.id)===String(
 function find(id){return personal[id]||shared[id]||null}
 function write(t){
  t.updatedAt=new Date().toISOString();
- if(t.scope==="personal"){personal[t.id]=t;store(LOCAL,personal);if(shared[t.id])enqueue(t.id,"delete");}
+ if(t.scope==="personal"){personal[t.id]=t;store(LOCAL,personal);window.dispatchEvent(new Event("sadeyen-personal-tasks"));if(shared[t.id])enqueue(t.id,"delete");}
  else{shared[t.id]=t;enqueue(t.id,"set",t);delete personal[t.id];store(LOCAL,personal)}
  render();
 }
@@ -89,10 +89,10 @@ async function flush(){
  if(busy||!connected)return;busy=true;
  try{for(const id of Object.keys(queue)){const entry=queue[id];if(!entry)continue;const path=ref(database,ROOT+"/"+id);try{if(entry.op==="delete")await remove(path);else await set(path,entry.value);delete queue[id];store(OUTBOX,queue)}catch(ex){el("taskSync").textContent="Modifications en attente : "+ex.message;break}}}finally{busy=false}
 }
-function modify(id,fn){const t=find(id);if(!t)return;const next=structuredClone?structuredClone(t):JSON.parse(JSON.stringify(t));fn(next);write(next)}
+function modify(id,fn){const t=find(id);if(!t)return;const next=typeof structuredClone==='function'?structuredClone(t):JSON.parse(JSON.stringify(t));fn(next);write(next)}
 function toggleDone(id,date){modify(id,t=>{if(isRepeating(t)){t.doneDates=t.doneDates||{};t.doneDates[date]=!t.doneDates[date]}else t.done=!t.done})}
 function toggleStep(id,date,sid,checked){modify(id,t=>{const k=isRepeating(t)?date:"once";t.checkDone=t.checkDone||{};t.checkDone[k]=t.checkDone[k]||{};t.checkDone[k][sid]=checked})}
-function removeTask(id){const t=find(id);if(!t||!confirm("Supprimer cette tâche ?"))return;if(t.scope==="personal"){delete personal[id];store(LOCAL,personal)}else{delete shared[id];enqueue(id,"delete")}render()}
+function removeTask(id){const t=find(id);if(!t||!confirm("Supprimer cette tâche ?"))return;if(t.scope==="personal"){delete personal[id];store(LOCAL,personal);window.dispatchEvent(new Event("sadeyen-personal-tasks"))}else{delete shared[id];enqueue(id,"delete")}render()}
 function localTodayInput(){return nowReunion()}
 function openForm(id){
  const t=id?find(id):null;activeId=id||null;
@@ -113,7 +113,7 @@ function openForm(id){
  el("taskCancel").onclick=()=>dialog.close();
  form.onsubmit=async ev=>{
   ev.preventDefault();const d=new FormData(form),name=String(d.get("title")||"").trim();if(!name)return;
-  const scope=String(d.get("scope"));if(scope==="shared"&&!connected){if(!confirm("Firebase n’est pas connecté. Cette tâche restera en attente de synchronisation. Continuer ?"))return}
+  const scope=String(d.get("scope"));if(d.get("remind")!=="none"&&!d.get("dueTime")){alert("Choisis une heure pour programmer ce rappel.");return}if(scope==="shared"&&!connected){if(!confirm("Firebase n’est pas connecté. Cette tâche restera en attente de synchronisation. Continuer ?"))return}
   const steps=[...form.querySelectorAll(".task-edit-step")].map(row=>({id:row.dataset.stepid||"s_"+Math.random().toString(36).slice(2),text:row.querySelector("input").value.trim()})).filter(x=>x.text);
   const old=t||{},newTask={...old,id:t?.id||"t_"+Date.now()+"_"+Math.random().toString(36).slice(2),title:name,dueDate:d.get("dueDate"),dueTime:d.get("dueTime"),priority:d.get("priority"),repeat:d.get("repeat"),scope,assignee:String(d.get("assignee")||"Équipe").trim()||"Équipe",remind:d.get("remind"),eventId:d.get("eventId"),note:String(d.get("note")||"").trim(),checklist:steps,doneDates:old.doneDates||{},checkDone:old.checkDone||{},done:old.done||false,createdAt:old.createdAt||new Date().toISOString()};
   if(t&&t.scope!==scope){if(t.scope==="shared"){delete shared[t.id];enqueue(t.id,"delete")}else{delete personal[t.id];store(LOCAL,personal)}}
@@ -128,8 +128,8 @@ el("taskFilters").addEventListener("click",ev=>{const b=ev.target.closest("[data
 el("taskList").addEventListener("click",ev=>{const b=ev.target.closest("[data-action]");if(!b||b.dataset.action==="step")return;const {action,id,date}=b.dataset;if(action==="done")toggleDone(id,date);if(action==="expand"){const k=id+"@"+date;expanded[k]=!expanded[k];render()}if(action==="edit")openForm(id);if(action==="delete")removeTask(id)});
 el("taskList").addEventListener("change",ev=>{const b=ev.target.closest('[data-action="step"]');if(b)toggleStep(b.dataset.id,b.dataset.date,b.dataset.step,b.checked)});
 el("taskNew").onclick=()=>openForm();
-el("taskProfileButton").onclick=()=>{const name=prompt("Quel prénom doit apparaître sur les tâches qui te sont attribuées ?",profile.name||"");if(name===null)return;profile.name=name.trim().slice(0,40);store(PROFILE,profile);render();};
-window.SadeyenTasks={open:()=>openForm(),render};
+el("taskProfileButton").onclick=()=>{const name=prompt("Quel prénom doit apparaître sur les tâches qui te sont attribuées ?",profile.name||"");if(name===null)return;profile.name=name.trim().slice(0,40);store(PROFILE,profile);window.dispatchEvent(new Event("sadeyen-profile-updated"));render();};
+window.SadeyenTasks={open:()=>openForm(),render,getPrivateTasks:()=>({...personal}),restorePrivateTasks:obj=>{if(!obj||typeof obj!=="object"||Array.isArray(obj))return;for(const [id,t]of Object.entries(obj)){if(t&&t.scope==="personal"&&t.id===id)personal[id]=t}store(LOCAL,personal);window.dispatchEvent(new Event("sadeyen-personal-tasks"));render()}};
 try{onAuthStateChanged(auth,user=>{
  connected=!!user&&user.uid==="usuiQcHmkMcLtDHbPvep19dURSQ2";uid=connected?user.uid:null;
  if(unsubscribe){unsubscribe();unsubscribe=null}
