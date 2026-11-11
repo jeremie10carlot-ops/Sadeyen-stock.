@@ -36,7 +36,11 @@ ATTENTION : ce secret permet à la tâche serveur de lire/écrire dans la base d
 
 ### 3. Activer et tester les rappels
 
-Dans GitHub → Actions → Rappels Sadeyen Stock → Run workflow.
+Après avoir configuré les deux secrets :
+- Dans GitHub → Settings → Secrets and variables → Actions → onglet Variables → New repository variable.
+- Nom exact : PUSH_ENABLED ; valeur : true.
+- Sans cette variable, le planificateur ne démarre pas et aucun secret n’est utilisé.
+- Puis GitHub → Actions → Rappels Sadeyen Stock → Run workflow.
 - Une exécution verte indique que le serveur fonctionne.
 - Le workflow est demandé toutes les 5 minutes (non garanti à la minute).
 - L'application affiche « Planificateur en fonctionnement » si la dernière exécution date de moins d'une heure.
