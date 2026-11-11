@@ -1,0 +1,21 @@
+{
+  "name": "Sadeyen Stock — Domaine Sadeyen",
+  "short_name": "Sadeyen",
+  "description": "Inventaire, événements et organisation du Domaine Sadeyen.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f8f5",
+  "theme_color": "#153e32",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
