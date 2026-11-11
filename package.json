@@ -1,0 +1,14 @@
+{
+  "name": "sadeyen-push-sender",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend only for scheduled Sadeyen PWA push reminders",
+  "scripts": {
+    "reminders": "node scripts/send-reminders.mjs"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.4.0",
+    "web-push": "^3.6.7"
+  }
+}
