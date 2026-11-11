@@ -58,7 +58,7 @@ function render(){
  const labels={today:"Aujourd’hui",week:"7 jours",all:"À venir",done:"Terminées"};
  el("taskTabs").innerHTML=Object.keys(labels).map(k=>'<button type="button" data-view="'+k+'" class="'+(view===k?"active":"")+'">'+labels[k]+'</button>').join("");
  el("taskFilters").innerHTML=[["all","Toutes"],["shared","Équipe"],["personal","Privées"]].map(x=>'<button type="button" data-scope="'+x[0]+'" class="'+(scopeFilter===x[0]?"active":"")+'">'+x[1]+'</button>').join("");
- el("taskProfile").textContent=profile.name||"Définir mon prénom";
+ el("taskProfileButton").textContent=profile.name||"Définir mon prénom";
  el("taskSync").textContent=connected?"Tâches communes synchronisées":"Tâches communes : connexion Firebase nécessaire";
  const a=entries();
  el("taskList").innerHTML=a.length?a.map(({task:t,date:d})=>{
